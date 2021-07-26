@@ -8,23 +8,26 @@ public class usersModel {
 	String email;
 	String dateOfBirth;
 	String password;
+	String phoneNumber;
+	String userType;
 	
-	public usersModel (String userName, String password) {
+	
+	public usersModel (String email, String password) {
 		
-		this.userName = userName;
+		this.email= email;
 		this.password = password;
 		
 		
 	}
 	
-	public usersModel (String userName, String firstName, String lastName, String email, String dob, String password) {
+	public usersModel (String firstName, String lastName, String phone_number, String email, String password, String userType) {
 		
-		this.userName = userName;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.dateOfBirth = dob;
 		this.password = password;
+		this.userType = userType;
+		this.phoneNumber = phone_number;
 		
 		
 	}
@@ -76,5 +79,22 @@ public class usersModel {
 	public void setpassword(String pass) {
 		this.password = pass;
 	}
+	
+	public String getPhonenumber() {
+		return this.phoneNumber;
+	}
+	
+	public void setPhonenumber(String number) {
+		this.phoneNumber = number;
+	}
+	
+	public String getuserType() {
+		return this.userType;
+	}
+	
+	public void setuserType(String type) {
+		this.userType = type;
+	}
+	
 	
 }
