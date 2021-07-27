@@ -9,25 +9,25 @@ CREATE TABLE Users(
     lname	varchar(100) NOT NULL,
     phoneNumber	varchar(100) NOT NULL,
     emailId	varchar(100) NOT NULL,
-    DOB		Date NOT NULL
+    userType	varchar(100) NOT NULL,
+    DOB		Date 
 
 );
 
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('1','Henry','Aguayo','516-535-5422','HenryRAguayo@dayrep.com', TO_DATE('10/15/1998', 'MM/DD/YYYY'));
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('2','Douglas','Barker','
-660-265-2267','DouglasEBarker@jourrapide.com', TO_DATE('05/18/1995', 'MM/DD/YYYY'));
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('3','Lamar','Harrigan','781-642-4313','LamarJHarrigan@jourrapide.com', TO_DATE('04/25/2001', 'MM/DD/YYYY'));
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('4','Bruce','Wilson','401-444-2462','
-BruceVWilson@jourrapide.com', TO_DATE('05/14/1985', 'MM/DD/YYYY'));
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('5','Eliza','Medina','817-377-9883','
-ElizaBMedina@dayrep.com', TO_DATE('07/22/1997', 'MM/DD/YYYY'));
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('6','Pamela','Silverman','406-443-0510','PamelaDSilverman@armyspy.com', TO_DATE('05/07/1991', 'MM/DD/YYYY'));
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('7','Sandra','Toro','209-423-0756','
-SandraBToro@teleworm.us', TO_DATE('02/03/1993', 'MM/DD/YYYY'));
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('8','Stewart','Bremer','440-679-9275','StewartMBremer@armyspy.com', TO_DATE('08/12/1989', 'MM/DD/YYYY'));
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('9','Erin','Vessels','703-337-8735','ErinCVessels@jourrapide.com', TO_DATE('06/20/1995', 'MM/DD/YYYY'));
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('10','Cynthia','Guthridge','618-830-2032','CynthiaMGuthridge@armyspy.com', TO_DATE('07/28/1975', 'MM/DD/YYYY'));
-
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType) VALUES ('1','Henry','Aguayo','516-535-5422','HenryRAguayo@dayrep.com', TO_DATE('10/15/1998', 'MM/DD/YYYY'), 'User');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType) VALUES ('2','Douglas','Barker','
+660-265-2267','DouglasEBarker@jourrapide.com', TO_DATE('05/18/1995', 'MM/DD/YYYY'), 'User');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType) VALUES ('3','Lamar','Harrigan','781-642-4313','LamarJHarrigan@jourrapide.com', TO_DATE('04/25/2001', 'MM/DD/YYYY'), 'User');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType) VALUES ('4','Bruce','Wilson','401-444-2462','
+BruceVWilson@jourrapide.com', TO_DATE('05/14/1985', 'MM/DD/YYYY'), 'User');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType) VALUES ('5','Eliza','Medina','817-377-9883','
+ElizaBMedina@dayrep.com', TO_DATE('07/22/1997', 'MM/DD/YYYY'), 'User');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType) VALUES ('6','Pamela','Silverman','406-443-0510','PamelaDSilverman@armyspy.com', TO_DATE('05/07/1991', 'MM/DD/YYYY'), 'User');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType) VALUES ('7','Sandra','Toro','209-423-0756','
+SandraBToro@teleworm.us', TO_DATE('02/03/1993', 'MM/DD/YYYY'), 'User');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType) VALUES ('8','Stewart','Bremer','440-679-9275','StewartMBremer@armyspy.com', TO_DATE('08/12/1989', 'MM/DD/YYYY'), 'User');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType) VALUES ('9','Erin','Vessels','703-337-8735','ErinCVessels@jourrapide.com', TO_DATE('06/20/1995', 'MM/DD/YYYY'), 'User');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType) VALUES ('10','Cynthia','Guthridge','618-830-2032','CynthiaMGuthridge@armyspy.com', TO_DATE('07/28/1975', 'MM/DD/YYYY'), 'User');
 
 
 
