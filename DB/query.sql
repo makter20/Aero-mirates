@@ -5,11 +5,11 @@ use flightmanagement;
 
 CREATE TABLE Users(
 	userId varchar(100) primary key,
-    fname	varchar(100),
-    lname	varchar(100),
-    phoneNumber	varchar(100),
-    emailId	varchar(100),
-    DOB		varchar(100)
+    fname	varchar(100) NOT NULL,
+    lname	varchar(100) NOT NULL,
+    phoneNumber	varchar(100) NOT NULL,
+    emailId	varchar(100) NOT NULL,
+    DOB		varchar(100) NOT NULL
 
 );
 
@@ -35,7 +35,7 @@ INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('10','Cyn
 
 CREATE TABLE LoginCredentials(
 	userEmail varchar(100) primary key,
-    userPassword varchar(100)
+    userPassword varchar(100) NOT NULL
 );
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('HenryRAguayo@dayrep.com','erg06');
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('DouglasEBarker@jourrapide.com','rbs4p');
@@ -54,7 +54,7 @@ INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('CynthiaMGuthridg
 
 CREATE TABLE City(
 	cityId varchar(100) primary key,
-	cityName varchar(100)
+	cityName varchar(100) NOT NULL
 );
 INSERT INTO City (cityName, cityId) VALUES ('Birmingham','BHM');
 INSERT INTO City (cityName, cityId) VALUES ('Dothan','DHN');
@@ -461,8 +461,8 @@ INSERT INTO City (cityName, cityId) VALUES ('St. Croix','STX');
 
 CREATE TABLE Airport(
 	airportId varchar(100) primary key,
-	airportName varchar(100),
-	city varchar(100),
+	airportName varchar(100) NOT NULL,
+	city varchar(100) NOT NULL,
     FOREIGN KEY(city) REFERENCES City(cityId)
 );
 
@@ -890,12 +890,12 @@ INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('DAL1085','Delta 
 
 CREATE TABLE Schedules(
 	scheduleId varchar(100) primary key,
-	sourceId varchar(100),
-	destinationId varchar(100),
-    capacity int,
-    scheduledDate date,
-    scheduledtime time,
-    flightId varchar(100),
+	sourceId varchar(100) NOT NULL,
+	destinationId varchar(100) NOT NULL,
+    capacity int NOT NULL,
+    scheduledDate date NOT NULL,
+    scheduledtime time NOT NULL,
+    flightId varchar(100) NOT NULL,
     FOREIGN KEY(sourceId) REFERENCES Airport(airportId),
     FOREIGN KEY(destinationId) REFERENCES Airport(airportId),
     FOREIGN KEY(flightId) REFERENCES Flight(flightId)
@@ -918,10 +918,10 @@ INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledD
 
 CREATE TABLE Booking(
 	bookingId varchar(100) primary key,
-	userId varchar(100),
-	schedule Id varchar(100),
-    bookingDate date,
-    seatNumber varchar(10),
+	userId varchar(100) NOT NULL,
+	schedule Id varchar(100) NOT NULL,
+    bookingDate date NOT NULL,
+    seatNumber varchar(10) NOT NULL,
     FOREIGN KEY(userId) REFERENCES Users(userId),
     FOREIGN KEY(scheduleId) REFERENCES Schedules(scheduleId)
 );
@@ -937,9 +937,9 @@ INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, scheduledDate,)
 
 CREATE TABLE Payment(
 	paymentId varchar(100) primary key,
-	paymentMode varchar(100),
-	amount varchar(100),
-    bookingId varchar(100),
+	paymentMode varchar(100) NOT NULL,
+	amount varchar(100) NOT NULL,
+    bookingId varchar(100) NOT NULL,
     FOREIGN KEY(bookingId) REFERENCES Booking(bookingId)
 );
 
