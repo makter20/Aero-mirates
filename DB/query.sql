@@ -8,23 +8,25 @@ CREATE TABLE Users(
     fname	varchar(100),
     lname	varchar(100),
     phoneNumber	varchar(100),
-    emailId	varchar(100)
+    emailId	varchar(100),
+    DOB		varchar(100)
+
 );
 
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('1','Henry','Aguayo','516-535-5422','HenryRAguayo@dayrep.com');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('1','Henry','Aguayo','516-535-5422','HenryRAguayo@dayrep.com','10/15/1998');
 INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('2','Douglas','Barker','
-660-265-2267','DouglasEBarker@jourrapide.com');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('3','Lamar','Harrigan','781-642-4313','LamarJHarrigan@jourrapide.com');
+660-265-2267','DouglasEBarker@jourrapide.com','05/18/1995');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('3','Lamar','Harrigan','781-642-4313','LamarJHarrigan@jourrapide.com','04/25/2001');
 INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('4','Bruce','Wilson','401-444-2462','
-BruceVWilson@jourrapide.com');
+BruceVWilson@jourrapide.com','05/14/1985');
 INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('5','Eliza','Medina','817-377-9883','
-ElizaBMedina@dayrep.com');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('6','Pamela','Silverman','406-443-0510','PamelaDSilverman@armyspy.com');
+ElizaBMedina@dayrep.com','07/22/1997');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('6','Pamela','Silverman','406-443-0510','PamelaDSilverman@armyspy.com','05/07/1991');
 INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('7','Sandra','Toro','209-423-0756','
-SandraBToro@teleworm.us');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('8','Stewart','Bremer','440-679-9275','StewartMBremer@armyspy.com');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('9','Erin','Vessels','703-337-8735','ErinCVessels@jourrapide.com');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('10','Cynthia','Guthridge','618-830-2032','CynthiaMGuthridge@armyspy.com');
+SandraBToro@teleworm.us','02/03/1993');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('8','Stewart','Bremer','440-679-9275','StewartMBremer@armyspy.com','08/12/1989');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('9','Erin','Vessels','703-337-8735','ErinCVessels@jourrapide.com','06/20/1995');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('10','Cynthia','Guthridge','618-830-2032','CynthiaMGuthridge@armyspy.com','07/28/1975');
 
 
 
