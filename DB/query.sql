@@ -5,28 +5,28 @@ use flightmanagement;
 
 CREATE TABLE Users(
 	userId varchar(100) primary key,
-    fname	varchar(100),
-    lname	varchar(100),
-    phoneNumber	varchar(100),
-    emailId	varchar(100),
-    DOB		varchar(100)
+    fname	varchar(100) NOT NULL,
+    lname	varchar(100) NOT NULL,
+    phoneNumber	varchar(100) NOT NULL,
+    emailId	varchar(100) NOT NULL,
+    DOB		Date NOT NULL
 
 );
 
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('1','Henry','Aguayo','516-535-5422','HenryRAguayo@dayrep.com','10/15/1998');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('1','Henry','Aguayo','516-535-5422','HenryRAguayo@dayrep.com', TO_DATE('10/15/1998', 'MM/DD/YYYY'));
 INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('2','Douglas','Barker','
-660-265-2267','DouglasEBarker@jourrapide.com','05/18/1995');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('3','Lamar','Harrigan','781-642-4313','LamarJHarrigan@jourrapide.com','04/25/2001');
+660-265-2267','DouglasEBarker@jourrapide.com', TO_DATE('05/18/1995', 'MM/DD/YYYY'));
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('3','Lamar','Harrigan','781-642-4313','LamarJHarrigan@jourrapide.com', TO_DATE('04/25/2001', 'MM/DD/YYYY'));
 INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('4','Bruce','Wilson','401-444-2462','
-BruceVWilson@jourrapide.com','05/14/1985');
+BruceVWilson@jourrapide.com', TO_DATE('05/14/1985', 'MM/DD/YYYY'));
 INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('5','Eliza','Medina','817-377-9883','
-ElizaBMedina@dayrep.com','07/22/1997');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('6','Pamela','Silverman','406-443-0510','PamelaDSilverman@armyspy.com','05/07/1991');
+ElizaBMedina@dayrep.com', TO_DATE('07/22/1997', 'MM/DD/YYYY'));
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('6','Pamela','Silverman','406-443-0510','PamelaDSilverman@armyspy.com', TO_DATE('05/07/1991', 'MM/DD/YYYY'));
 INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('7','Sandra','Toro','209-423-0756','
-SandraBToro@teleworm.us','02/03/1993');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('8','Stewart','Bremer','440-679-9275','StewartMBremer@armyspy.com','08/12/1989');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('9','Erin','Vessels','703-337-8735','ErinCVessels@jourrapide.com','06/20/1995');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('10','Cynthia','Guthridge','618-830-2032','CynthiaMGuthridge@armyspy.com','07/28/1975');
+SandraBToro@teleworm.us', TO_DATE('02/03/1993', 'MM/DD/YYYY'));
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('8','Stewart','Bremer','440-679-9275','StewartMBremer@armyspy.com', TO_DATE('08/12/1989', 'MM/DD/YYYY'));
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('9','Erin','Vessels','703-337-8735','ErinCVessels@jourrapide.com', TO_DATE('06/20/1995', 'MM/DD/YYYY'));
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('10','Cynthia','Guthridge','618-830-2032','CynthiaMGuthridge@armyspy.com', TO_DATE('07/28/1975', 'MM/DD/YYYY'));
 
 
 
@@ -35,7 +35,7 @@ INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('10'
 
 CREATE TABLE LoginCredentials(
 	userEmail varchar(100) primary key,
-    userPassword varchar(100)
+    userPassword varchar(100) NOT NULL
 );
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('HenryRAguayo@dayrep.com','erg06');
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('DouglasEBarker@jourrapide.com','rbs4p');
@@ -54,7 +54,7 @@ INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('CynthiaMGuthridg
 
 CREATE TABLE City(
 	cityId varchar(100) primary key,
-	cityName varchar(100)
+	cityName varchar(100) NOT NULL
 );
 INSERT INTO City (cityName, cityId) VALUES ('Birmingham','BHM');
 INSERT INTO City (cityName, cityId) VALUES ('Dothan','DHN');
@@ -461,8 +461,8 @@ INSERT INTO City (cityName, cityId) VALUES ('St. Croix','STX');
 
 CREATE TABLE Airport(
 	airportId varchar(100) primary key,
-	airportName varchar(100),
-	city varchar(100),
+	airportName varchar(100) NOT NULL,
+	city varchar(100) NOT NULL,
     FOREIGN KEY(city) REFERENCES City(cityId)
 );
 
@@ -867,8 +867,8 @@ INSERT INTO Airport (airportId, airportName, city) VALUES ('STX','Henry E. Rohls
 
 CREATE TABLE Flight(
 	flightId varchar(100) primary key,
-	flightName varchar(100),
-	airlineName varchar(100)
+	flightName varchar(100) NOT NULL,
+	airlineName varchar(100) NOT NULL
 );
 
 INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('UAL1039','United 1039','United Airlines');
@@ -890,27 +890,26 @@ INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('DAL1085','Delta 
 
 CREATE TABLE Schedules(
 	scheduleId varchar(100) primary key,
-	sourceId varchar(100),
-	destinationId varchar(100),
-    capacity int,
-    scheduledDate date,
-    scheduledtime time,
-    flightId varchar(100),
+	sourceId varchar(100) NOT NULL,
+	destinationId varchar(100) NOT NULL,
+    capacity int NOT NULL,
+    scheduledDate date NOT NULL,
+    flightId varchar(100) NOT NULL,
     FOREIGN KEY(sourceId) REFERENCES Airport(airportId),
     FOREIGN KEY(destinationId) REFERENCES Airport(airportId),
     FOREIGN KEY(flightId) REFERENCES Flight(flightId)
 );
 
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('1','LAX','SFO','142','2021-08-29','15:55:00','UAL1039');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('2','SBA','MCO','155','2021-07-22','09:05:00','JBU1374');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('3','KTN','UST','147','2021-09-25','18:33:00','DAL1032');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('4','USA','ESD','142','2021-08-05','12:38:00','ASA1137');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('5','LRKS','SFO','145','2021-07-31','22:15:00','FFT1511');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('6','HHH','ALB','146','2021-08-23','15:55:00','SWA1021');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('7','ESC','GPT','154','2021-09-22','15:32:00','FFT1513');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('8','GPT','SAF','147','2021-09-25','10:26:00','JBU1258');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('9','CHA','GGG','142','2021-08-15','18:33:00','AAL1138');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('10','LAX','SFO','145','2021-08-29','22:15:00','DAL1085');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('1','LAX','SFO','142', TO_DATE('2021/08/29 15:15:00', 'yyyy/mm/dd hh24:mi:ss'), 'UAL1039');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('2','SBA','MCO','155', TO_DATE('2021/07/22 09:05:00', 'yyyy/mm/dd hh24:mi:ss'), 'JBU1374');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('3','KTN','UST','147', TO_DATE('2021/09/25 18:33:00', 'yyyy/mm/dd hh24:mi:ss'), 'DAL1032');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('4','USA','ESD','142', TO_DATE('2021/08/05 12:38:00', 'yyyy/mm/dd hh24:mi:ss'), 'ASA1137');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('5','UST','SFO','145', TO_DATE('2021/07/31 22:15:00', 'yyyy/mm/dd hh24:mi:ss'), 'FFT1511');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('6','HHH','ALB','146', TO_DATE('2021/08/23 15:55:00', 'yyyy/mm/dd hh24:mi:ss'), 'SWA1021');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('7','ESC','GPT','154', TO_DATE('2021/09/22 15:32:00', 'yyyy/mm/dd hh24:mi:ss'), 'FFT1513');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('8','GPT','SAF','147', TO_DATE('2021/09/25 10:26:00', 'yyyy/mm/dd hh24:mi:ss'), 'JBU1258');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('9','CHA','GGG','142', TO_DATE('2021/08/15 18:33:00', 'yyyy/mm/dd hh24:mi:ss'), 'AAL1138');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('10','LAX','SFO','145', TO_DATE('2021/08/29 22:15:00', 'yyyy/mm/dd hh24:mi:ss'), 'DAL1085');
 
 
 
@@ -918,34 +917,34 @@ INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledD
 
 CREATE TABLE Booking(
 	bookingId varchar(100) primary key,
-	userId varchar(100),
-	schedule Id varchar(100),
-    bookingDate date,
-    seatNumber varchar(10),
+	userId varchar(100) NOT NULL,
+	scheduleId varchar(100) NOT NULL,
+    bookingDate date NOT NULL,
+    seatNumber varchar(10) NOT NULL,
     FOREIGN KEY(userId) REFERENCES Users(userId),
     FOREIGN KEY(scheduleId) REFERENCES Schedules(scheduleId)
 );
 
-INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, scheduledDate,) VALUES ('1','9','4','2021-08-03','53');
-INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, scheduledDate,) VALUES ('2','2','2','2021-07-12','88');
-INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, scheduledDate,) VALUES ('3','5','2','2021-07-16','97');
-INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, scheduledDate,) VALUES ('4','6','5','2021-07-06','125');
-INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, scheduledDate,) VALUES ('5','1','7','2021-08-23','132');
+INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('1','9','4', TO_DATE('07/12/2021', 'MM/DD/YYYY'),'53');
+INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('2','2','2', TO_DATE('07/12/2021', 'MM/DD/YYYY'),'88');
+INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('3','5','2', TO_DATE('07/16/2021', 'MM/DD/YYYY'), '97');
+INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('4','6','5', TO_DATE('07/06/2021', 'MM/DD/YYYY'),'125');
+INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('5','1','7', TO_DATE('08/23/2021', 'MM/DD/YYYY'),'132');
 
 
 -- Create Payment Table
 
 CREATE TABLE Payment(
 	paymentId varchar(100) primary key,
-	paymentMode varchar(100),
-	amount varchar(100),
-    bookingId varchar(100),
+	paymentMode varchar(100) NOT NULL,
+	amount varchar(100) NOT NULL,
+    bookingId varchar(100) NOT NULL,
     FOREIGN KEY(bookingId) REFERENCES Booking(bookingId)
 );
 
 
-INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId,) VALUES ('1','Credit Card','152','1');
-INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId,) VALUES ('2','Credit Card','98','2');
-INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId,) VALUES ('3','Credit Card','155','3');
-INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId,) VALUES ('4','Credit Card','169','4');
-INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId,) VALUES ('5','Credit Card','178','5');
+INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId) VALUES ('1','Credit Card','152','1');
+INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId) VALUES ('2','Credit Card','98','2');
+INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId) VALUES ('3','Credit Card','155','3');
+INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId) VALUES ('4','Credit Card','169','4');
+INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId) VALUES ('5','Credit Card','178','5');
