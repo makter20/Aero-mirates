@@ -5,28 +5,28 @@ use flightmanagement;
 
 CREATE TABLE Users(
 	userId varchar(100) primary key,
-    fname	varchar(100) NOT NULL,
-    lname	varchar(100) NOT NULL,
-    phoneNumber	varchar(100) NOT NULL,
-    emailId	varchar(100) NOT NULL,
-    DOB		varchar(100) NOT NULL
+    fname	varchar(100),
+    lname	varchar(100),
+    phoneNumber	varchar(100),
+    emailId	varchar(100),
+    DOB		varchar(100)
 
 );
 
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('1','Henry','Aguayo','516-535-5422','HenryRAguayo@dayrep.com','10/15/1998');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('2','Douglas','Barker','
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('1','Henry','Aguayo','516-535-5422','HenryRAguayo@dayrep.com','10/15/1998');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('2','Douglas','Barker','
 660-265-2267','DouglasEBarker@jourrapide.com','05/18/1995');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('3','Lamar','Harrigan','781-642-4313','LamarJHarrigan@jourrapide.com','04/25/2001');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('4','Bruce','Wilson','401-444-2462','
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('3','Lamar','Harrigan','781-642-4313','LamarJHarrigan@jourrapide.com','04/25/2001');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('4','Bruce','Wilson','401-444-2462','
 BruceVWilson@jourrapide.com','05/14/1985');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('5','Eliza','Medina','817-377-9883','
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('5','Eliza','Medina','817-377-9883','
 ElizaBMedina@dayrep.com','07/22/1997');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('6','Pamela','Silverman','406-443-0510','PamelaDSilverman@armyspy.com','05/07/1991');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('7','Sandra','Toro','209-423-0756','
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('6','Pamela','Silverman','406-443-0510','PamelaDSilverman@armyspy.com','05/07/1991');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('7','Sandra','Toro','209-423-0756','
 SandraBToro@teleworm.us','02/03/1993');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('8','Stewart','Bremer','440-679-9275','StewartMBremer@armyspy.com','08/12/1989');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('9','Erin','Vessels','703-337-8735','ErinCVessels@jourrapide.com','06/20/1995');
-INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('10','Cynthia','Guthridge','618-830-2032','CynthiaMGuthridge@armyspy.com','07/28/1975');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('8','Stewart','Bremer','440-679-9275','StewartMBremer@armyspy.com','08/12/1989');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('9','Erin','Vessels','703-337-8735','ErinCVessels@jourrapide.com','06/20/1995');
+INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB) VALUES ('10','Cynthia','Guthridge','618-830-2032','CynthiaMGuthridge@armyspy.com','07/28/1975');
 
 
 
@@ -35,7 +35,7 @@ INSERT INTO Users (userId, fname, lname, phoneNumber, emailId) VALUES ('10','Cyn
 
 CREATE TABLE LoginCredentials(
 	userEmail varchar(100) primary key,
-    userPassword varchar(100) NOT NULL
+    userPassword varchar(100)
 );
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('HenryRAguayo@dayrep.com','erg06');
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('DouglasEBarker@jourrapide.com','rbs4p');
@@ -54,7 +54,7 @@ INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('CynthiaMGuthridg
 
 CREATE TABLE City(
 	cityId varchar(100) primary key,
-	cityName varchar(100) NOT NULL
+	cityName varchar(100)
 );
 INSERT INTO City (cityName, cityId) VALUES ('Birmingham','BHM');
 INSERT INTO City (cityName, cityId) VALUES ('Dothan','DHN');
@@ -461,8 +461,8 @@ INSERT INTO City (cityName, cityId) VALUES ('St. Croix','STX');
 
 CREATE TABLE Airport(
 	airportId varchar(100) primary key,
-	airportName varchar(100) NOT NULL,
-	city varchar(100) NOT NULL,
+	airportName varchar(100),
+	city varchar(100),
     FOREIGN KEY(city) REFERENCES City(cityId)
 );
 
@@ -575,7 +575,7 @@ INSERT INTO Airport (airportId, airportName, city) VALUES ('CSG','Columbus Airpo
 INSERT INTO Airport (airportId, airportName, city) VALUES ('MCN','Middle Georgia Regional Airport','MCN');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('SAV','Savannah/Hilton Head International Airport','SAV');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('VLD','Valdosta Regional Airport','VLD');
-INSERT INTO Airport (airportId, airportName, city) VALUES ('ITO','Hilo International Airport',''ITO);
+INSERT INTO Airport (airportId, airportName, city) VALUES ('ITO','Hilo International Airport','ITO');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('HNL','Daniel K. Inouye International Airport','HNL');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('OGG','Kahului Airport','OGG');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('KOA','Ellison Onizuka Kona International Airport at Keahole','KOA');
@@ -644,7 +644,7 @@ INSERT INTO Airport (airportId, airportName, city) VALUES ('CMX','Houghton Count
 INSERT INTO Airport (airportId, airportName, city) VALUES ('IMT','Ford Airport','IMT');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('AZO','Kalamazoo/Battle Creek International Airport','AZO');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('LAN','Capital Region International Airport','LAN');
-INSERT INTO Airport (airportId, airportName, city) VALUES ('MQT','Sawyer International Airport','MQT');
+INSERT INTO Airport (airportId, airportName, city) VALUES ('MQT','Sawyer International Airport','SAW');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('MKG','Muskegon County Airport','MKG');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('PLN','Pellston Regional Airport','PLN');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('MBS','MBS International Airport','MBS');
@@ -890,12 +890,12 @@ INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('DAL1085','Delta 
 
 CREATE TABLE Schedules(
 	scheduleId varchar(100) primary key,
-	sourceId varchar(100) NOT NULL,
-	destinationId varchar(100) NOT NULL,
-    capacity int NOT NULL,
-    scheduledDate date NOT NULL,
-    scheduledtime time NOT NULL,
-    flightId varchar(100) NOT NULL,
+	sourceId varchar(100),
+	destinationId varchar(100),
+    capacity int,
+    scheduledDate date,
+    scheduledtime time,
+    flightId varchar(100),
     FOREIGN KEY(sourceId) REFERENCES Airport(airportId),
     FOREIGN KEY(destinationId) REFERENCES Airport(airportId),
     FOREIGN KEY(flightId) REFERENCES Flight(flightId)
@@ -918,10 +918,10 @@ INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledD
 
 CREATE TABLE Booking(
 	bookingId varchar(100) primary key,
-	userId varchar(100) NOT NULL,
-	schedule Id varchar(100) NOT NULL,
-    bookingDate date NOT NULL,
-    seatNumber varchar(10) NOT NULL,
+	userId varchar(100),
+	schedule Id varchar(100),
+    bookingDate date,
+    seatNumber varchar(10),
     FOREIGN KEY(userId) REFERENCES Users(userId),
     FOREIGN KEY(scheduleId) REFERENCES Schedules(scheduleId)
 );
@@ -937,9 +937,9 @@ INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, scheduledDate,)
 
 CREATE TABLE Payment(
 	paymentId varchar(100) primary key,
-	paymentMode varchar(100) NOT NULL,
-	amount varchar(100) NOT NULL,
-    bookingId varchar(100) NOT NULL,
+	paymentMode varchar(100),
+	amount varchar(100),
+    bookingId varchar(100),
     FOREIGN KEY(bookingId) REFERENCES Booking(bookingId)
 );
 
