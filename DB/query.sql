@@ -906,7 +906,7 @@ INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledD
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('5','LRKS','SFO','145','2021-07-31','22:15:00','FFT1511');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('6','HHH','ALB','146','2021-08-23','15:55:00','SWA1021');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('7','ESC','GPT','154','2021-09-22','15:32:00','FFT1513');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('8','GPT','SAF','147','2021-09-25','10:26:00','JBU1258);
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('8','GPT','SAF','147','2021-09-25','10:26:00','JBU1258');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('9','CHA','GGG','142','2021-08-15','18:33:00','AAL1138');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, flightId) VALUES ('10','LAX','SFO','145','2021-08-29','22:15:00','DAL1085');
 
