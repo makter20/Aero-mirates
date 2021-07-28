@@ -928,24 +928,24 @@ INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledD
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('19','KLCH','KPVC','142', TO_DATE('2021/08/15 10:43:00', 'yyyy/mm/dd hh24:mi:ss'), 'AAL1138');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('20','KLAX','KIMT','147', TO_DATE('2021/08/24 17:22:00', 'yyyy/mm/dd hh24:mi:ss'), 'DAL1085');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('21','KMEI','KHLN','148', TO_DATE('2021/08/28 13:45:00', 'yyyy/mm/dd hh24:mi:ss'), 'UAL1039');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('22','TISX','KACY','155', TO_DATE('2021/08/18 09:10:00', 'yyyy/mm/dd hh24:mi:ss'), 'JBU1374');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('22','TISX','KACY','155', TO_DATE('2021/08/08 09:10:00', 'yyyy/mm/dd hh24:mi:ss'), 'JBU1374');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('23','KELM','KIAH','147', TO_DATE('2021/09/04 10:25:00', 'yyyy/mm/dd hh24:mi:ss'), 'DAL1032');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('24','KPGV','KCDC','149', TO_DATE('2021/07/13 19:38:00', 'yyyy/mm/dd hh24:mi:ss'), 'ASA1137');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('25','KTOL','KMOT','150', TO_DATE('2021/07/26 20:17:00', 'yyyy/mm/dd hh24:mi:ss'), 'FFT1511');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('26','KIAG','KLAS','146', TO_DATE('2021/08/23 23:22:00', 'yyyy/mm/dd hh24:mi:ss'), 'SWA1021');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('27','KPDX','KAPN','156', TO_DATE('2021/09/16 19:55:00', 'yyyy/mm/dd hh24:mi:ss'), 'FFT1513');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('27','KPDX','KAPN','156', TO_DATE('2021/09/06 19:55:00', 'yyyy/mm/dd hh24:mi:ss'), 'FFT1513');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('28','KMEI','KCDC','147', TO_DATE('2021/09/19 10:26:00', 'yyyy/mm/dd hh24:mi:ss'), 'JBU1258');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('29','TJRV','KSTC','142', TO_DATE('2021/08/23 22:43:00', 'yyyy/mm/dd hh24:mi:ss'), 'AAL1138');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('30','KLAX','KSFO','145', TO_DATE('2021/09/28 22:15:00', 'yyyy/mm/dd hh24:mi:ss'), 'DAL1085');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('31','KLAX','KFLO','142', TO_DATE('2021/09/24 17:15:00', 'yyyy/mm/dd hh24:mi:ss'), 'UAL1039');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('31','KLAX','KFLO','142', TO_DATE('2021/09/04 17:15:00', 'yyyy/mm/dd hh24:mi:ss'), 'UAL1039');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('32','TISX','KJMS','155', TO_DATE('2021/08/29 09:35:00', 'yyyy/mm/dd hh24:mi:ss'), 'JBU1374');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('33','KLYH','KPDX','147', TO_DATE('2021/08/25 12:33:00', 'yyyy/mm/dd hh24:mi:ss'), 'DAL1032');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('33','KLYH','KPDX','147', TO_DATE('2021/08/05 12:33:00', 'yyyy/mm/dd hh24:mi:ss'), 'DAL1032');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('34','KTYS','KCDC','142', TO_DATE('2021/07/29 19:49:00', 'yyyy/mm/dd hh24:mi:ss'), 'ASA1137');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('35','KPDX','KMOT','145', TO_DATE('2021/07/31 02:15:00', 'yyyy/mm/dd hh24:mi:ss'), 'FFT1511');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('36','KIAG','TJPS','146', TO_DATE('2021/09/23 06:45:00', 'yyyy/mm/dd hh24:mi:ss'), 'SWA1021');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('36','KIAG','TJPS','146', TO_DATE('2021/09/03 06:45:00', 'yyyy/mm/dd hh24:mi:ss'), 'SWA1021');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('37','KSTC','KBNA','154', TO_DATE('2021/09/16 07:42:00', 'yyyy/mm/dd hh24:mi:ss'), 'FFT1513');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('38','KHXD','KIAG','147', TO_DATE('2021/09/13 11:56:00', 'yyyy/mm/dd hh24:mi:ss'), 'JBU1258');
-INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('39','KAPN','TJCP','142', TO_DATE('2021/08/25 04:24:00', 'yyyy/mm/dd hh24:mi:ss'), 'AAL1138');
+INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('39','KAPN','TJCP','142', TO_DATE('2021/08/05 04:24:00', 'yyyy/mm/dd hh24:mi:ss'), 'AAL1138');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('40','KACT','KSFO','145', TO_DATE('2021/08/21 18:38:00', 'yyyy/mm/dd hh24:mi:ss'), 'DAL1085');
 
 
