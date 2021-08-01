@@ -51,6 +51,16 @@ INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('StewartMBremer@a
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('ErinCVessels@jourrapide.com','clcst');
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('CynthiaMGuthridge@armyspy.com','wlr94');
 
+-- Create AdminLoginCredentials Table
+
+CREATE TABLE LoginCredentials(
+	userEmail varchar(100) primary key,
+    userPassword varchar(100) NOT NULL
+);
+INSERT INTO AdminLoginCredentials (adminUserName, adminPassword) VALUES ('admin','admin');
+
+
+
 
 
 -- Create City Table

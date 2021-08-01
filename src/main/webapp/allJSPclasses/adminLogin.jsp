@@ -22,7 +22,7 @@
 
 <label for="email">Admin Key: 
 
-<input type = "text" id= "adminUserName" name="adminUserName" autofocus placeholder = "Key:">
+<input type = "text" id= "adminUserName" name="adminUserName" autofocus placeholder = "Key">
 
 </label><br><br>
 

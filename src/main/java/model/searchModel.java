@@ -13,6 +13,8 @@ public class searchModel {
 	private List<List<String>> scheduledFlights;
 	private ResultSet rs;
 	
+	
+	
 	public List<List<String>> search(queryModel query) {
 		scheduledFlights = new ArrayList<List<String>>();
 		try (Connection connection = WebConnection.getConnection()) {
@@ -22,6 +24,35 @@ public class searchModel {
 					+ query.getGoing_to() + "\'" + " AND DEPARTING_DATE=\'" 
 					+ query.getDeparting_date() +"\'" + " AND RETURNING_DATE=\'"
 					+ query.getReturning_date() + "\'";
+			rs = st.executeQuery(sqlQuery);
+			while(rs.next()) {
+				scheduledFlights.add(new ArrayList<String>());
+				scheduledFlights.get(scheduledFlights.size()-1)
+								.add(rs.getString("scheduleId"));
+				scheduledFlights.get(scheduledFlights.size()-1)
+								.add(rs.getString("sourceId"));
+				scheduledFlights.get(scheduledFlights.size()-1)
+								.add(rs.getString("destinationId"));
+				scheduledFlights.get(scheduledFlights.size()-1)
+								.add(rs.getString("capacity"));
+				scheduledFlights.get(scheduledFlights.size()-1)
+								.add(rs.getString("scheduledDate"));
+				scheduledFlights.get(scheduledFlights.size()-1)
+								.add(rs.getString("scheduledtime"));
+				scheduledFlights.get(scheduledFlights.size()-1)
+								.add(rs.getString("flightId"));
+			}			
+		} catch (SQLException e) {
+			printingSQLExc.SQLExceptionPrinter(e);
+		}
+		return scheduledFlights;
+	}	
+	
+	public List<List<String>> getAll() {
+		scheduledFlights = new ArrayList<List<String>>();
+		try (Connection connection = WebConnection.getConnection()) {
+			Statement st = connection.createStatement();
+			String sqlQuery = "SELECT * FROM SCHEDULE";
 			rs = st.executeQuery(sqlQuery);
 			while(rs.next()) {
 				scheduledFlights.add(new ArrayList<String>());

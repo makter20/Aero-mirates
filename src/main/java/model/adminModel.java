@@ -3,6 +3,7 @@ package model;
 public class adminModel {
 	private String adminUsername;
 	private String password;
+	private String adminType;
 	
 	public adminModel(String adminUsername, String password) {
 		super();
@@ -20,6 +21,12 @@ public class adminModel {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getAdminType() {
+		return adminType;
+	}
+	public void setAdminType(String adminType) {
+		this.adminType = adminType;
 	}
 	
 

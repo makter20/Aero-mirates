@@ -14,54 +14,34 @@ public class adminLoginValidation {
 	private String adminType;
 	
 	public boolean adminLoginValidate(adminModel admin) throws ClassNotFoundException {
-		try (Connection connection = WebConnection.getConnection()) {
-			
-//			Statement st = connection.createStatement();
-//			String query = "SELECT FIRSTNAME FROM system.NEWACCOUNT WHERE EMAIL = 'sarker@gmail.com' AND PASSWORD = '12345'";
-//			rs = st.executeQuery(query);
-//			if(rs.next()) {
-//				System.out.println(rs.getString("FIRSTNAME"));
-//				valid = true;
-//			}
-			
+		try (Connection connection = WebConnection.getConnection()) {		
 			Statement st = connection.createStatement();
-			String query = "SELECT * FROM ADMIN WHERE adminUsername='" 
-							+ admin.getAdminUsername() + "'" + " AND PASSWORD='" 
+			String query = "SELECT * FROM AdminLoginCredentials WHERE adminUserName= '" 
+							+ admin.getAdminUsername() + "'" + "AND adminPassword ='" 
 							+ admin.getPassword() + "'";
-
-			/*PreparedStatement preparedStatement = connection.prepareStatement(query);
-			System.out.println(user.getemail());
-			System.out.println(user.getpassword());
-			preparedStatement.setString(1, user.getemail());
-			preparedStatement.setString(2, user.getpassword());*/
-
 			rs = st.executeQuery(query);
 			if(rs.next()) {
 				valid = true;
-			}			
+//				adminType = rs.getString("ADMINTYPE");
+				System.out.println(rs.getString("EMAIL"));
+			} else {
+				System.out.println("HI MY NAME IS TROC");
+			}
 
 		} catch (SQLException e) {
+			
+			System.out.println("SELECT * FROM AdminLoginCredentials WHERE adminUserName= '" 
+					+admin.getAdminUsername() + "'" + "AND adminPassword ='" 
+					+ admin.getPassword() + "'");
 			printingSQLExc.SQLExceptionPrinter(e);
 		}
 		return valid;
 	}
 	
-	public String gettype() {
-		
-		if(valid) {
-			return adminType;
-		}
-//		
-//		try {
-//			if(rs.next()) {
-//				userType = rs.getString("USERTYPE");
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
+//	public String gettype() {
+//		if(valid) {
+//			return adminType;
 //		}
-//		
-		
-		return "no input";
-		
-	}
+//		return "no input";
+//	}
 }
