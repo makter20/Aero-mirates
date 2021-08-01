@@ -30,7 +30,7 @@ INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType, pa
 INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType, password) VALUES (user_id.nextval,'Stewart','Bremer','440-679-9275','StewartMBremer@armyspy.com', TO_DATE('08/12/1989', 'MM/DD/YYYY'), 'User','7nshz');
 INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType, password) VALUES (user_id.nextval,'Erin','Vessels','703-337-8735','ErinCVessels@jourrapide.com', TO_DATE('06/20/1995', 'MM/DD/YYYY'), 'User','clcst');
 INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType, password) VALUES (user_id.nextval,'Cynthia','Guthridge','618-830-2032','CynthiaMGuthridge@armyspy.com', TO_DATE('07/28/1975', 'MM/DD/YYYY'), 'User','wlr94');
-
+COMMIT WORK;
 
 
 
@@ -50,9 +50,15 @@ INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('SandraBToro@tele
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('StewartMBremer@armyspy.com','7nshz');
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('ErinCVessels@jourrapide.com','clcst');
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('CynthiaMGuthridge@armyspy.com','wlr94');
+COMMIT WORK;
 
+CREATE TABLE AdminLoginCredentials(
+    adminUserName varchar(100) primary key,
+    adminPassword varchar(100) NOT NULL
+);
 
-
+INSERT INTO AdminLoginCredentials (adminUserName, adminPassword) VALUES ('admin','admin');
+COMMIT WORK;
 -- Create City Table
 
 CREATE TABLE City(
@@ -455,7 +461,7 @@ INSERT INTO City (cityName, cityId) VALUES ('San Juan','SIG');
 INSERT INTO City (cityName, cityId) VALUES ('Vieques','VQS');
 INSERT INTO City (cityName, cityId) VALUES ('St. Thomas','STT');
 INSERT INTO City (cityName, cityId) VALUES ('St. Croix','STX');
-
+COMMIT WORK;
 
 
 
@@ -865,7 +871,7 @@ INSERT INTO Airport (airportId, airportName, city) VALUES ('TJIG','Fernando Luis
 INSERT INTO Airport (airportId, airportName, city) VALUES ('TJVQ','Antonio Rivera Rodríguez Airport','VQS');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('TIST','Cyril E. King Airport','STT');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('TISX','Henry E. Rohlsen Airport','STX');
-
+COMMIT WORK;
 
 
 
@@ -889,7 +895,7 @@ INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('FFT1513','Fronti
 INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('JBU1258','JetBlue 1258','JetBlue');
 INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('AAL1138','American Airlines 1138','American Airlines');
 INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('DAL1085','Delta 1085','Delta Air Lines');
-
+COMMIT WORK;
 
 
 
@@ -947,7 +953,7 @@ INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledD
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('38','KHXD','KIAG','147', TO_DATE('2021/09/13 11:56:00', 'yyyy/mm/dd hh24:mi:ss'), 'JBU1258');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('39','KAPN','TJCP','142', TO_DATE('2021/08/05 04:24:00', 'yyyy/mm/dd hh24:mi:ss'), 'AAL1138');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, flightId) VALUES ('40','KACT','KSFO','145', TO_DATE('2021/08/21 18:38:00', 'yyyy/mm/dd hh24:mi:ss'), 'DAL1085');
-
+COMMIT WORK;
 
 
 -- Create Booking Table
@@ -967,7 +973,7 @@ INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VAL
 INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('3','5','2', TO_DATE('07/16/2021', 'MM/DD/YYYY'), '97');
 INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('4','6','5', TO_DATE('07/06/2021', 'MM/DD/YYYY'),'125');
 INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('5','1','7', TO_DATE('08/23/2021', 'MM/DD/YYYY'),'132');
-
+COMMIT WORK;
 
 -- Create Payment Table
 
@@ -985,3 +991,4 @@ INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId) VALUES ('2','Cr
 INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId) VALUES ('3','Credit Card','155','3');
 INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId) VALUES ('4','Credit Card','169','4');
 INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId) VALUES ('5','Credit Card','178','5');
+COMMIT WORK;

@@ -1,5 +1,6 @@
 DROP TABLE Payment;
 DROP TABLE LoginCredentials;
+DROP TABLE AdminLoginCredentials;
 DROP TABLE Booking;
 DROP TABLE Schedules;
 DROP TABLE Flight;
