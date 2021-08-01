@@ -7,26 +7,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home</title>
 </head>
-<link rel="stylesheet" href="adminScreenLogin.css">
-<body>
-<!-- <div class="full_container"> -->
-<div class="top_container"> 
-<h1 id="top_title">Admin Screen</h1>
-</div>
-
-<div class="form_container">
-<div class="inner_box">
-<form action="<%=request.getContextPath()%>/searchServlet" method="post" class="search_form">
-
-<div class="inner_div">
-	<input type="submit" id="submit" name='Customers' value="Customers">
-	<input type="submit" id="submit" name="Input a flight" value="Input a flight">
-</div>
-
+<link rel="stylesheet" href="adminScreen.css">
+<form action="<%=request.getContextPath()%>/adminFlightServlet" method="post" class="search_form">
 </form>
-</div>
-</div>
-
-<!-- </div> -->
+<body>
+	<div class="top_container"> 
+		<h1 id="top_title">Travel Agency</h1>
+	</div>
+	<div>
+		<ul>
+		  <li><a class="active" href="#home">Home</a></li>
+		  <li><a href="adminFlightPage.jsp">Flights</a></li>
+		  <li><a href="#data">Customers</a></li>
+		</ul>
+	</div>
+	<div class="right">
+		<h1>HOME</h1>
+	</div>
 </body>
 </html>
