@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<script>window.location.href='http://localhost:8080/Aero-mirates/allJSPclasses/adminScreen.jsp';</script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +8,7 @@
 <title>Home</title>
 </head>
 <link rel="stylesheet" href="adminScreen.css">
-<form action="<%=request.getContextPath()%>/adminFlightTable" method="post" class="search_form">
+<form action="<%=request.getContextPath()%>/adminFlightServlet" method="post" class="search_form">
 </form>
 <body>
 	<div class="top_container"> 

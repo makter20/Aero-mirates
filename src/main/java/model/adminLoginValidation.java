@@ -25,7 +25,7 @@ public class adminLoginValidation {
 //				adminType = rs.getString("ADMINTYPE");
 				System.out.println(rs.getString("adminUserName"));
 			} else {
-				System.out.println("HI MY NAME IS TROC");
+				System.out.println("Not an admin");
 			}
 
 		} catch (SQLException e) {

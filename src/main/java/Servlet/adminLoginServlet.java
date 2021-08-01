@@ -44,10 +44,9 @@ public class adminLoginServlet extends HttpServlet {
 		try {
 			boolean check = val.adminLoginValidate(admin);
 			if(check){
-					response.sendRedirect("/Aero-mirates/allJSPclasses/adminScreen.jsp");
-					System.out.println("TEST");
+				response.sendRedirect("/TravelAgency/allJSPclasses/adminScreen.jsp");
 			}else {
-				response.sendRedirect("/Aero-mirates/allJSPclasses/adminLogin.jsp");
+				response.sendRedirect("/TravelAgency/allJSPclasses/adminLogin.jsp");
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

@@ -54,6 +54,6 @@ public class adminFlightServlet extends HttpServlet {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		response.sendRedirect("/Aero-mirates/allJSPclasses/adminFlightPage.jsp");
+		response.sendRedirect("/TravelAgency/allJSPclasses/adminFlightPage.jsp");
 	}
 }
