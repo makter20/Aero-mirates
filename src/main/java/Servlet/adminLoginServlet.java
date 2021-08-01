@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.loginValidation;
+import model.adminLoginValidation;
 import model.adminModel;
+import model.loginValidation;
 
 /**
  * Servlet implementation class adminLoginServlet
@@ -17,7 +18,7 @@ import model.adminModel;
 public class adminLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private adminModel admin;
-	private loginValidation val;
+	private adminLoginValidation val;
        
        
     /**
@@ -27,6 +28,10 @@ public class adminLoginServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    public void init() throws ServletException {
+		val = new adminLoginValidation();
+		
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -37,15 +42,12 @@ public class adminLoginServlet extends HttpServlet {
 		String pass = request.getParameter("pwd");
 		admin = new adminModel(key,pass);
 		try {
-			boolean check = val.loginValidate(admin);
-			if(check) {
-				if(userType.equals("User")){
-					response.sendRedirect("/TravelAgency/allJSPclasses/userScreen.jsp");
-				}else {
-					response.sendRedirect("/TravelAgency/allJSPclasses/adminScreen.jsp");
-				}
+			boolean check = val.adminLoginValidate(admin);
+			if(check){
+					response.sendRedirect("/Aero-mirates/allJSPclasses/adminScreen.jsp");
+					System.out.println("TEST");
 			}else {
-				response.sendRedirect("/TravelAgency/allJSPclasses/login.jsp");
+				response.sendRedirect("/Aero-mirates/allJSPclasses/adminLogin.jsp");
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
