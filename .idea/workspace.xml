@@ -2,22 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21e80940-845d-429f-a9eb-2a8acad21309" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/LoginCredentials/LoginCredentials.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/User/UserProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/InvalidPasswordException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/NoBookingsPresentException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/NoFlightsPresentException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/UserAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/UserNotPresentException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/flight/LocationManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Airport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Flight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/FlightData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/order/OrderManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/ConnectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/loginServlet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/searchServlet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/signUpServlet.java" beforeDir="false" />
@@ -60,13 +44,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -81,6 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1627847863696</updated>
       <workItem from="1627847864905" duration="502000" />
+      <workItem from="1627848541017" duration="89000" />
     </task>
     <servers />
   </component>
@@ -88,17 +75,19 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="199" key="#Project_Structure" timestamp="1627848319413">
-      <screen x="0" y="25" width="1792" height="1017" />
+    <state x="0" y="197" key="#Project_Structure" timestamp="1627848628968">
+      <screen x="0" y="25" width="1792" height="1015" />
     </state>
+    <state x="0" y="197" key="#Project_Structure/0.25.1792.1015@0.25.1792.1015" timestamp="1627848628968" />
     <state x="0" y="199" key="#Project_Structure/0.25.1792.1017@0.25.1792.1017" timestamp="1627848319413" />
     <state x="588" y="367" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1627848278318">
       <screen x="0" y="25" width="1792" height="1017" />
     </state>
     <state x="588" y="367" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1017@0.25.1792.1017" timestamp="1627848278318" />
-    <state x="560" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1627847958429">
-      <screen x="0" y="25" width="1792" height="1013" />
+    <state x="560" y="251" width="670" height="678" key="search.everywhere.popup" timestamp="1627848553096">
+      <screen x="0" y="25" width="1792" height="1015" />
     </state>
     <state x="560" y="251" width="670" height="676" key="search.everywhere.popup/0.25.1792.1013@0.25.1792.1013" timestamp="1627847958429" />
+    <state x="560" y="251" width="670" height="678" key="search.everywhere.popup/0.25.1792.1015@0.25.1792.1015" timestamp="1627848553096" />
   </component>
 </project>
