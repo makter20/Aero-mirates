@@ -1,19 +1,6 @@
-create database flightmanagement;
-use flightmanagement;
 
--- Create Users Table
 
-CREATE TABLE Users(
-    userId 	int primary key,
-    fname	varchar(100) NOT NULL,
-    lname	varchar(100) NOT NULL,
-    password	varchar(100) NOT NULL,
-    phoneNumber	varchar(100) UNIQUE NOT NULL,
-    emailId	varchar(100) UNIQUE NOT NULL,
-    userType	varchar(100) NOT NULL,
-    DOB		Date 
-);
-
+-- Load Users Table
 
 CREATE SEQUENCE user_id
 START WITH 1
@@ -33,13 +20,8 @@ INSERT INTO Users (userId, fname, lname, phoneNumber, emailId, DOB, userType, pa
 COMMIT WORK;
 
 
+-- Load LoginCredentials Table
 
--- Create LoginCredentials Table
-
-CREATE TABLE LoginCredentials(
-	userEmail varchar(100) primary key,
-    userPassword varchar(100) NOT NULL
-);
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('HenryRAguayo@dayrep.com','erg06');
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('DouglasEBarker@jourrapide.com','rbs4p');
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('LamarJHarrigan@jourrapide.com','tmkgu');
@@ -52,19 +34,13 @@ INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('ErinCVessels@jou
 INSERT INTO LoginCredentials (userEmail, userPassword) VALUES ('CynthiaMGuthridge@armyspy.com','wlr94');
 COMMIT WORK;
 
-CREATE TABLE AdminLoginCredentials(
-    adminUserName varchar(100) primary key,
-    adminPassword varchar(100) NOT NULL
-);
 
 INSERT INTO AdminLoginCredentials (adminUserName, adminPassword) VALUES ('admin','admin');
 COMMIT WORK;
--- Create City Table
 
-CREATE TABLE City(
-	cityId varchar(100) primary key,
-	cityName varchar(100) NOT NULL
-);
+
+-- Load City Table
+
 INSERT INTO City (cityName, cityId) VALUES ('Birmingham','BHM');
 INSERT INTO City (cityName, cityId) VALUES ('Dothan','DHN');
 INSERT INTO City (cityName, cityId) VALUES ('Huntsville','HSV');
@@ -464,16 +440,7 @@ INSERT INTO City (cityName, cityId) VALUES ('St. Croix','STX');
 COMMIT WORK;
 
 
-
-
--- Create Airport Table
-
-CREATE TABLE Airport(
-	airportId varchar(100) primary key,
-	airportName varchar(100) NOT NULL,
-	city varchar(100) NOT NULL,
-    FOREIGN KEY(city) REFERENCES City(cityId)
-);
+-- Load Airport Table
 
 INSERT INTO Airport (airportId, airportName, city) VALUES ('KBHM','Birmingham–Shuttlesworth International Airport','BHM');
 INSERT INTO Airport (airportId, airportName, city) VALUES ('KDHN','Dothan Regional Airport','DHN');
@@ -874,15 +841,7 @@ INSERT INTO Airport (airportId, airportName, city) VALUES ('TISX','Henry E. Rohl
 COMMIT WORK;
 
 
-
-
--- Create Flight Table
-
-CREATE TABLE Flight(
-	flightId varchar(100) primary key,
-	flightName varchar(100) NOT NULL,
-	airlineName varchar(100) NOT NULL
-);
+-- Load Flight Table
 
 INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('UAL1039','United 1039','United Airlines');
 INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('SWA1021','Southwest 1021','Southwest Airlines');
@@ -898,20 +857,7 @@ INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('DAL1085','Delta 
 COMMIT WORK;
 
 
--- Create Schedule Table
-CREATE TABLE Schedules(
-	scheduleId varchar(100) primary key,
-	sourceId varchar(100) NOT NULL,
-	destinationId varchar(100) NOT NULL,
-    capacity int NOT NULL,
-    scheduledDate date NOT NULL,
-    scheduledtime TIMESTAMP NOT NULL,
-    returnDate date NOT NULL,
-    flightId varchar(100) NOT NULL,
-    FOREIGN KEY(sourceId) REFERENCES Airport(airportId),
-    FOREIGN KEY(destinationId) REFERENCES Airport(airportId),
-    FOREIGN KEY(flightId) REFERENCES Flight(flightId)
-);
+-- Load Schedule Table
 
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, returnDate, flightId) VALUES ('1','KLAX','KSFO','142', DATE'2021-08-29', TIMESTAMP '2021-08-29 15:15:00', DATE'2021-08-30', 'UAL1039');
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, returnDate, flightId) VALUES ('2','TISX','KHTS','155', DATE'2021-07-22', TIMESTAMP '2021-07-22 09:05:00', DATE'2021-07-25', 'JBU1374');
@@ -955,18 +901,8 @@ INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledD
 INSERT INTO Schedules (scheduleId, sourceId, destinationId, capacity, scheduledDate, scheduledtime, returnDate, flightId) VALUES ('40','KACT','KSFO','145', DATE'2021-08-21', TIMESTAMP '2021-08-21 18:38:00', DATE'2021-08-23', 'DAL1085');
 COMMIT WORK;
 
--- Create Booking Table
 
-CREATE TABLE Booking(
-	bookingId varchar(100) primary key,
-	userId int NOT NULL,
-	scheduleId varchar(100) NOT NULL,
-    bookingDate date NOT NULL,
-    seatNumber varchar(10) NOT NULL,
-    FOREIGN KEY(userId) REFERENCES Users(userId),
-    FOREIGN KEY(scheduleId) REFERENCES Schedules(scheduleId)
-);
-
+-- Load Booking Table
 
 INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('1','9','4', TO_DATE('07/12/2021', 'MM/DD/YYYY'),'53');
 INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('2','2','2', TO_DATE('07/12/2021', 'MM/DD/YYYY'),'88');
@@ -975,17 +911,8 @@ INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VAL
 INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('5','1','7', TO_DATE('08/23/2021', 'MM/DD/YYYY'),'132');
 COMMIT WORK;
 
--- Create Payment Table
 
-CREATE TABLE Payment(
-	paymentId varchar(100) primary key,
-	paymentMode varchar(100) NOT NULL,
-	amount varchar(100) NOT NULL,
-    bookingId varchar(100) NOT NULL,
-    FOREIGN KEY(bookingId) REFERENCES Booking(bookingId)
-);
-
-
+-- Load Payment Table
 
 INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId) VALUES ('1','Credit Card','152','1');
 INSERT INTO Payment (paymentId, paymentMode, amount,  bookingId) VALUES ('2','Credit Card','98','2');
