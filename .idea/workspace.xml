@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21e80940-845d-429f-a9eb-2a8acad21309" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/loginServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/searchServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/signUpServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/flightModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/loginValidation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/queryModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/searchModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/signUpUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/usersModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oracleConnection/WebConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oracleConnection/printingSQLExc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oracleConnection/tester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/query.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/order/OrderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/order/OrderManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +15,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1w8kzFGpOdQp3u36gomnonOpHR2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,13 +27,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DB" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DB" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DB" />
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
@@ -67,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1627847863696</updated>
       <workItem from="1627847864905" duration="502000" />
-      <workItem from="1627848541017" duration="89000" />
+      <workItem from="1627848541017" duration="2429000" />
     </task>
     <servers />
   </component>
@@ -75,18 +73,25 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="197" key="#Project_Structure" timestamp="1627848628968">
-      <screen x="0" y="25" width="1792" height="1015" />
+    <state x="0" y="192" key="#Project_Structure" timestamp="1627924282514">
+      <screen x="0" y="25" width="1792" height="1010" />
     </state>
+    <state x="0" y="192" key="#Project_Structure/0.25.1792.1010@0.25.1792.1010" timestamp="1627924282514" />
     <state x="0" y="197" key="#Project_Structure/0.25.1792.1015@0.25.1792.1015" timestamp="1627848628968" />
     <state x="0" y="199" key="#Project_Structure/0.25.1792.1017@0.25.1792.1017" timestamp="1627848319413" />
-    <state x="588" y="367" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1627848278318">
-      <screen x="0" y="25" width="1792" height="1017" />
+    <state x="588" y="360" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1627924386627">
+      <screen x="0" y="25" width="1792" height="1010" />
     </state>
+    <state x="588" y="360" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1627924386627" />
     <state x="588" y="367" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1017@0.25.1792.1017" timestamp="1627848278318" />
-    <state x="560" y="251" width="670" height="678" key="search.everywhere.popup" timestamp="1627848553096">
-      <screen x="0" y="25" width="1792" height="1015" />
+    <state x="595" y="319" key="run.anything.popup" timestamp="1627923769536">
+      <screen x="0" y="25" width="1792" height="1010" />
     </state>
+    <state x="595" y="319" key="run.anything.popup/0.25.1792.1010@0.25.1792.1010" timestamp="1627923769536" />
+    <state x="560" y="250" width="670" height="675" key="search.everywhere.popup" timestamp="1627923758244">
+      <screen x="0" y="25" width="1792" height="1010" />
+    </state>
+    <state x="560" y="250" width="670" height="675" key="search.everywhere.popup/0.25.1792.1010@0.25.1792.1010" timestamp="1627923758244" />
     <state x="560" y="251" width="670" height="676" key="search.everywhere.popup/0.25.1792.1013@0.25.1792.1013" timestamp="1627847958429" />
     <state x="560" y="251" width="670" height="678" key="search.everywhere.popup/0.25.1792.1015@0.25.1792.1015" timestamp="1627848553096" />
   </component>
