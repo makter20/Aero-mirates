@@ -12,6 +12,7 @@
 
 
 <body>
+
  
 <div class="login_container">
 
@@ -30,9 +31,17 @@
 
 <input type="password" id ="pwd" name="pwd" placeholder ="Password"><br><br>
 <input type ="submit" class="button" value = "Login">
-</label><br><br>
 
+</label><br><br>
 </form>
+<%-- <div>
+<%
+String error = (String)session.getAttribute("errorMessage");
+if(error!=null){%>
+<h1>Invalid email or password!</h1>
+
+  <%} %>
+</div> --%>
 
 <a href="signUp.jsp" class ="form_link">Don't have an account? Create account</a>
 

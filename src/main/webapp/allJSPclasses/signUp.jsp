@@ -54,7 +54,6 @@ email = (String ) session.getAttribute("email");%>
 <label for ="user_type">Choose user type</label>
 <select id="user_type" name="userType">
 <option value="User"> User</option>
-<option value="Admin"> Admin</option>
 </select><br><br>
 
 <input class = "submit" type="submit" value="Submit" />

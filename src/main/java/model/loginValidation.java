@@ -12,29 +12,19 @@ public class loginValidation {
 	public boolean loginValidate(usersModel user) throws ClassNotFoundException {
 		try (Connection connection = WebConnection.getConnection()) {
 			
-//			Statement st = connection.createStatement();
-//			String query = "SELECT FIRSTNAME FROM system.NEWACCOUNT WHERE EMAIL = 'sarker@gmail.com' AND PASSWORD = '12345'";
-//			rs = st.executeQuery(query);
-//			if(rs.next()) {
-//				System.out.println(rs.getString("FIRSTNAME"));
-//				valid = true;
-//			}
-			
 			Statement st = connection.createStatement();
-			String query = "SELECT * FROM system.NEWACCOUNT WHERE EMAIL='" + user.getemail() + "'" + " AND PASSWORD='" + user.getpassword() + "'";
-
-			/*PreparedStatement preparedStatement = connection.prepareStatement(query);
-			System.out.println(user.getemail());
-			System.out.println(user.getpassword());
-			preparedStatement.setString(1, user.getemail());
-			preparedStatement.setString(2, user.getpassword());*/
+			String query = "SELECT * FROM system.Users WHERE emailId='" + user.getemail() + "'" + " AND password='" + user.getpassword() + "'";
 
 			rs = st.executeQuery(query);
 			if(rs.next()) {
 				valid = true;
-				userType = rs.getString("USERTYPE");
-				System.out.println(rs.getString("EMAIL"));
-			}			
+				userType = rs.getString("userType");
+				System.out.println(rs.getString("emailId"));
+			}
+			
+			rs.close();
+			connection.close();
+			
 
 		} catch (SQLException e) {
 			printingSQLExc.SQLExceptionPrinter(e);
@@ -47,18 +37,10 @@ public class loginValidation {
 		if(valid) {
 			return userType;
 		}
-//		
-//		try {
-//			if(rs.next()) {
-//				userType = rs.getString("USERTYPE");
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//		
 		
 		return "no input";
 		
 	}
+	
 
 }
