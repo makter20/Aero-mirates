@@ -11,6 +11,7 @@ import oracleConnection.printingSQLExc;
 public class searchModel {
 	private boolean valid = false;
 	private List<List<String>> scheduledFlights;
+	private List<List<String>> flights;
 	private ResultSet rs;
 	
 	
@@ -74,4 +75,26 @@ public class searchModel {
 		}
 		return scheduledFlights;
 	}	
+	
+	public List<List<String>> getAllFlights() {
+		flights = new ArrayList<List<String>>();
+		try (Connection connection = WebConnection.getConnection()) {
+			Statement st = connection.createStatement();
+			String sqlQuery = "SELECT * FROM Flight";
+			rs = st.executeQuery(sqlQuery);
+			while(rs.next()) {
+				flights.add(new ArrayList<String>());
+				flights.get(flights.size()-1)
+								.add(rs.getString("flightId"));
+				flights.get(flights.size()-1)
+								.add(rs.getString("flightName"));
+				flights.get(flights.size()-1)
+								.add(rs.getString("airlineName"));
+			}			
+		} catch (SQLException e) {
+			printingSQLExc.SQLExceptionPrinter(e);
+		}
+		return flights;
+	}	
+	
 }

@@ -21,9 +21,24 @@
 		</ul>
 	</div>
 	<div class="right">
+		<%if(session.getAttribute("error")!=null){ %>
+			<%boolean error = (boolean)session.getAttribute("error"); %>
+			<%if(error == true ){ %>
+				<h1>ERROR</h1>
+			<%}%>
+		<%}%>
 		<h1>Flight Status:</h1>
 		<form action="<%=request.getContextPath()%>/adminFlightServlet" method="post" class="search_form">
 			<input type="submit" value="Refresh">
+		</form>
+		<form action="<%=request.getContextPath()%>/adminFlightInputServlet" method="post" class="search_form">
+			<input type="text" name="scheduleID" autofocus placeholder="Schedule ID" required>
+			<input type="text" name="flightID" autofocus placeholder="Flight ID" required>
+			<input type="text" name="departure" autofocus placeholder="Departure" required>
+			<input type="text" name="arrival" autofocus placeholder="Arrival" required>
+			<input type="text" name="capacity" autofocus placeholder="Capacity" required>
+			<input type="text" name="scheduleDate" autofocus placeholder="Schedule Date" required>
+			<br><input type="submit" value="Input flight"><br>
 		</form>
 		<div>
 			<table border="1">
