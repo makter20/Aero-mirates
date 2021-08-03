@@ -2,22 +2,27 @@ package model;
 
 public class scheduleModel {
 	private String scheduleID;
+	private String flightID;
 	private String sourceID;
 	private String destinationID;
 	private int capacity;
 	private String scheduleDate;
-	private String flightID;
+	private String scheduleTime;
+	private String returnDate;
 	
-	public scheduleModel(String scheduleID, String sourceID, String destinationID, int capacity, String scheduleDate,
-			String flightID) {
+	public scheduleModel(String scheduleID, String flightID, String sourceID, String destinationID, int capacity,
+			String scheduleDate, String scheduleTime, String returnDate) {
 		super();
 		this.scheduleID = scheduleID;
+		this.flightID = flightID;
 		this.sourceID = sourceID;
 		this.destinationID = destinationID;
 		this.capacity = capacity;
 		this.scheduleDate = scheduleDate;
-		this.flightID = flightID;
+		this.scheduleTime = scheduleTime;
+		this.returnDate = returnDate;
 	}
+	
 	public String getScheduleID() {
 		return scheduleID;
 	}
@@ -54,4 +59,21 @@ public class scheduleModel {
 	public void setFlightID(String flightID) {
 		this.flightID = flightID;
 	}
+
+	public String getScheduleTime() {
+		return scheduleTime;
+	}
+
+	public void setScheduleTime(String scheduleTime) {
+		this.scheduleTime = scheduleTime;
+	}
+
+	public String getReturnDate() {
+		return returnDate;
+	}
+
+	public void setReturnDate(String returnDate) {
+		this.returnDate = returnDate;
+	}
+	
 }

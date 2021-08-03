@@ -16,52 +16,31 @@
 	<div>
 		<ul>
 		  <li><a href="adminScreen.jsp">Home</a></li>
-		  <li><a class="active" href="#flights">Flights</a></li>
+		  <li><a href="scheduleTable.jsp">Scheduled Flights</a></li>
+		  <li><a class="active" href="#flights">Schedule a Flight</a></li>
 		  <li><a href="#data">Customers</a></li>
 		</ul>
 	</div>
 	<div class="right">
-		<%if(session.getAttribute("error")!=null){ %>
-			<%boolean error = (boolean)session.getAttribute("error"); %>
-			<%if(error == true ){ %>
-				<h1>ERROR</h1>
+		<%if(session.getAttribute("added")!=null){ %>
+			<%boolean added = (boolean)session.getAttribute("added"); %>
+			<%if(added == true){ %>
+				<h1>Added Flight to Scheduled Flights Table!</h1>
 			<%}%>
 		<%}%>
-		<h1>Flight Status:</h1>
-		<form action="<%=request.getContextPath()%>/adminFlightServlet" method="post" class="search_form">
-			<input type="submit" value="Refresh">
-		</form>
-		<form action="<%=request.getContextPath()%>/adminFlightInputServlet" method="post" class="search_form">
+		<h1>Create a new schedule for your selected flight:</h1>
+		<form action="<%=request.getContextPath()%>/scheduleInputServlet" method="post" class="search_form">
 			<input type="text" name="scheduleID" autofocus placeholder="Schedule ID" required>
 			<input type="text" name="flightID" autofocus placeholder="Flight ID" required>
 			<input type="text" name="departure" autofocus placeholder="Departure" required>
 			<input type="text" name="arrival" autofocus placeholder="Arrival" required>
 			<input type="text" name="capacity" autofocus placeholder="Capacity" required>
 			<input type="text" name="scheduleDate" autofocus placeholder="Schedule Date" required>
+			<input type="text" name="scheduleTime" autofocus placeholder="Schedule Time" required>
+			<input type="text" name="returnDate" autofocus placeholder="Return Date" required>
+			
 			<br><input type="submit" value="Input flight"><br>
 		</form>
-		<div>
-			<table border="1">
-				<tr>
-					<td>Flight ID</td>
-					<td>Departure Airline</td>
-					<td>Arrival Airline</td>
-					<td>Capacity</td>
-					<td>Schedule Date</td>
-				</tr>
-			<%List<List<String>>flights=(List<List<String>>)session.getAttribute("scheduledFlights"); %>
-			<%if(flights != null){ %>
-				<%for(List<String>f:flights) { %>
-					<tr>
-						<td><% out.println(f.get(5)); %></td>
-				        <td><% out.println(f.get(1)); %></td>
-				        <td><% out.println(f.get(2)); %></td>
-				        <td><% out.println(f.get(3)); %></td>
-				        <td><% out.println(f.get(4)); %></td>
-					</tr>
-				<%}%> 
-			<%}%>
-			 </table>
 		</div>
 	</div>
 </body>

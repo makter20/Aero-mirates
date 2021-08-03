@@ -15,24 +15,25 @@ import model.*;
 /**
  * Servlet implementation class adminFlightInput
  */
-@WebServlet("/adminFlightInputServlet")
-public class adminFlightInputServlet extends HttpServlet {
+@WebServlet("/scheduleInputServlet")
+public class scheduleInputServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private scheduleModel schedule;
+    private scheduleInputModel input;
     private boolean check;
-    private adminFlightInputModel input;
+    
     private searchModel search;
     private List<List<String>> flightsList;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public adminFlightInputServlet() {
+    public scheduleInputServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
     
     public void init() throws ServletException {
-		input = new adminFlightInputModel();
+		input = new scheduleInputModel();
 		search = new searchModel();
 	}
 	/**
@@ -50,40 +51,35 @@ public class adminFlightInputServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		HttpSession session = request.getSession();
-//		String scheduleID = request.getParameter("scheduleID");
-//		String departure = request.getParameter("departure");
-//		String arrival = request.getParameter("arrival");
-//		int capacity = Integer.parseInt(request.getParameter("capacity"));
-//		String scheduleDate = request.getParameter("scheduleDate");
-//		String flightID = request.getParameter("flightID");
-//		
-//		schedule = new scheduleModel(scheduleID,departure,arrival,capacity,scheduleDate,flightID);
+		String scheduleID = request.getParameter("scheduleID");
+		String departure = request.getParameter("departure");
+		String arrival = request.getParameter("arrival");
+		int capacity = Integer.parseInt(request.getParameter("capacity"));
+		String scheduleDate = request.getParameter("scheduleDate");
+		String scheduleTime = request.getParameter("scheduleTime");
+		String returnDate = request.getParameter("returnDate");
+		String flightID = request.getParameter("flightID");
+		
+		schedule = new scheduleModel(scheduleID,flightID,departure,arrival,capacity,scheduleDate,scheduleTime,returnDate);
 		
 		try {
-//			check = input.createNewFlight(schedule);
-//			if(check) {
-//				session.setAttribute("error",false);	
-//			}
-//			else {
-//				session.setAttribute("error", true);
-//			}
-			flightsList = search.getAllFlights();
-			session.setAttribute("flights",flightsList);
+			check = search.findSchedule(schedule);
+			if(check) {
+				session.setAttribute("added", false);
+				System.out.print("added = false");
+				response.sendRedirect("/TravelAgency/allJSPclasses/addToSchedule.jsp");
+			}
+			else {
+				input.scheduleFlight(schedule);
+				session.setAttribute("added",true);
+				response.sendRedirect("/TravelAgency/allJSPclasses/addToSchedule.jsp");
+			}
+			
 			
 		} catch(Exception e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		response.sendRedirect("/TravelAgency/allJSPclasses/createFlight.jsp");
 	}
 
 }
-//
-//try {
-//	scheduledFlights = search.getAll();
-//	System.out.println(scheduledFlights.size());
-//	session.setAttribute("scheduledFlights",scheduledFlights);
-//} catch(Exception e) {
-//	e.printStackTrace();
-//	System.out.println(e.getMessage());
-//}

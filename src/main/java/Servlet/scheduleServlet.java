@@ -14,8 +14,8 @@ import model.*;
 /**
  * Servlet implementation class adminFlightTable
  */
-@WebServlet("/adminFlightServlet")
-public class adminFlightServlet extends HttpServlet {
+@WebServlet("/scheduleServlet")
+public class scheduleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private List<List<String>> scheduledFlights;
 	private queryModel query;
@@ -24,7 +24,7 @@ public class adminFlightServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public adminFlightServlet() {
+    public scheduleServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -54,6 +54,6 @@ public class adminFlightServlet extends HttpServlet {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		response.sendRedirect("/TravelAgency/allJSPclasses/adminFlightPage.jsp");
+		response.sendRedirect("/TravelAgency/allJSPclasses/scheduleTable.jsp");
 	}
 }

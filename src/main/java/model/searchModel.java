@@ -1,5 +1,6 @@
 package model;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,37 +17,29 @@ public class searchModel {
 	
 	
 	
-	public List<List<String>> search(queryModel query) {
-		scheduledFlights = new ArrayList<List<String>>();
+	public boolean findSchedule(scheduleModel schedule) {
 		try (Connection connection = WebConnection.getConnection()) {
-			Statement st = connection.createStatement();
-			String sqlQuery = "SELECT * FROM SCHEDULE WHERE SOURCE_ID =\'" 
-					+ query.getDeparting_from() + "\'" + " AND DESTINATIONID=\'" 
-					+ query.getGoing_to() + "\'" + " AND DEPARTING_DATE=\'" 
-					+ query.getDeparting_date() +"\'" + " AND RETURNING_DATE=\'"
-					+ query.getReturning_date() + "\'";
-			rs = st.executeQuery(sqlQuery);
-			while(rs.next()) {
-				scheduledFlights.add(new ArrayList<String>());
-				scheduledFlights.get(scheduledFlights.size()-1)
-								.add(rs.getString("scheduleId"));
-				scheduledFlights.get(scheduledFlights.size()-1)
-								.add(rs.getString("sourceId"));
-				scheduledFlights.get(scheduledFlights.size()-1)
-								.add(rs.getString("destinationId"));
-				scheduledFlights.get(scheduledFlights.size()-1)
-								.add(rs.getString("capacity"));
-				scheduledFlights.get(scheduledFlights.size()-1)
-								.add(rs.getString("scheduledDate"));
-				scheduledFlights.get(scheduledFlights.size()-1)
-								.add(rs.getString("scheduledtime"));
-				scheduledFlights.get(scheduledFlights.size()-1)
-								.add(rs.getString("flightId"));
+			String sql = "SELECT * FROM SCHEDULES WHERE SCHEDULEID = ? AND "
+					+ "SOURCEID = ? AND DESTINATIONID = ? AND CAPACITY = ?"
+					
+//					+ "AND SCHEDULEDDATE = ? "
+					+ "AND FLIGHTID = ?";
+			PreparedStatement st = connection.prepareStatement(sql);
+			st.setString(1, schedule.getScheduleID());
+			st.setString(2, schedule.getSourceID());
+			st.setString(3, schedule.getDestinationID());
+			st.setInt(4, schedule.getCapacity());
+//			st.setString(5, schedule.getScheduleDate());
+			st.setString(5, schedule.getFlightID());
+			rs = st.executeQuery();
+			if (rs.next()) {
+				valid = true;
 			}			
 		} catch (SQLException e) {
+			valid = true;
 			printingSQLExc.SQLExceptionPrinter(e);
 		}
-		return scheduledFlights;
+		return valid;
 	}	
 	
 	public List<List<String>> getAll() {
@@ -95,6 +88,25 @@ public class searchModel {
 			printingSQLExc.SQLExceptionPrinter(e);
 		}
 		return flights;
-	}	
+	}
 	
+	public boolean findFlight(flightModel flight) {
+		valid = false;
+		String sql = "SELECT * FROM FLIGHT WHERE flightId = ? AND flightName = "
+				+ "? AND airlineName = ?";
+		try (Connection connection = WebConnection.getConnection()) {
+			PreparedStatement st = connection.prepareStatement(sql);
+			st.setString(1, flight.getFlightID());
+			st.setString(2, flight.getFlightName());
+			st.setString(3, flight.getAirlineName());
+			System.out.println(st.toString());
+			rs = st.executeQuery();
+			if (rs.next()) {
+				valid = true;
+			}			
+		} catch (SQLException e) {
+			printingSQLExc.SQLExceptionPrinter(e);
+		}
+		return valid;
+	}
 }
