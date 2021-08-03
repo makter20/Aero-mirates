@@ -16,9 +16,9 @@
 	<div>
 		<ul>
 		  <li><a href="adminScreen.jsp">Home</a></li>
-		  <li><a class="active" href="#flights">Scheduled Flights</a></li>
+		  <li><a href="scheduleTable.jsp">Scheduled Flights</a></li>
 		  <li><a href="chooseFlight.jsp">Schedule a flight</a></li>
-		  <li><a href="adminUserTable.jsp">Customers</a></li>
+		  <li><a class="active" href="#customers">Customers</a></li>
 		</ul>
 	</div>
 	<div class="right">
@@ -28,28 +28,30 @@
 				<h1>ERROR</h1>
 			<%}%>
 		<%}%>
-		<h1>Scheduled Flights:</h1>
-		<form action="<%=request.getContextPath()%>/scheduleServlet" method="post" class="search_form">
+		<h1>User Table:</h1>
+		<form action="<%=request.getContextPath()%>/userTableServlet" method="post" class="search_form">
 			<input type="submit" value="Refresh">
 		</form>
 		<div>
 			<table border="1">
 				<tr>
-					<td>Flight ID</td>
-					<td>Departure Airline</td>
-					<td>Arrival Airline</td>
-					<td>Capacity</td>
-					<td>Schedule Date</td>
+					<td>UserID</td>
+					<td>First Name</td>
+					<td>Last Name</td>
+					<td>Phone Number</td>
+					<td>Email</td>
+					<td>DOB</td>
 				</tr>
-			<%List<List<String>>flights=(List<List<String>>)session.getAttribute("scheduledFlights"); %>
-			<%if(flights != null){ %>
-				<%for(List<String>f:flights) { %>
+			<%List<List<String>>users=(List<List<String>>)session.getAttribute("users"); %>
+			<%if(users != null){ %>
+				<%for(List<String>f:users) { %>
 					<tr>
-						<td><% out.println(f.get(5)); %></td>
+						<td><% out.println(f.get(0)); %></td>
 				        <td><% out.println(f.get(1)); %></td>
 				        <td><% out.println(f.get(2)); %></td>
-				        <td><% out.println(f.get(3)); %></td>
 				        <td><% out.println(f.get(4)); %></td>
+				        <td><% out.println(f.get(5)); %></td>
+				        <td><% out.println(f.get(7)); %></td>
 					</tr>
 				<%}%> 
 			<%}%>

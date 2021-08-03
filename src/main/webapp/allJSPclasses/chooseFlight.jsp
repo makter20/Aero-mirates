@@ -18,7 +18,7 @@
 		  <li><a href="adminScreen.jsp">Home</a></li>
 		  <li><a href="scheduleTable.jsp">Scheduled Flights</a></li>
 		  <li><a class="active" href="#flights">Schedule a flight</a></li>
-		  <li><a href="#data">Customers</a></li>
+		  <li><a href="adminUserTable.jsp">Customers</a></li>
 		</ul>
 	</div>
 	<div class="right">
@@ -28,7 +28,8 @@
 				<h1>ERROR</h1>
 			<%}%>
 		<%}%>
-		<h1>Choose a flight:</h1>
+		<h1>Flight Scheduler:</h1>
+		<h4>Choose a flight from the table of flights:</h4>
 		<form action="<%=request.getContextPath()%>/refreshChooseFlightServlet" method="post" class="search_form">
 			<input type="submit" value="Refresh">
 		</form>

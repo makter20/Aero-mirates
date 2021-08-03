@@ -52,7 +52,7 @@ public class searchServlet extends HttpServlet {
 		query = new queryModel(departing_from,going_to,departing_date,returning_date);
 		HttpSession session = request.getSession();
 		try {
-			scheduledFlights = search.search(query);
+			//scheduledFlights = search.search(query);
 			session.setAttribute("scheduledFlights",scheduledFlights);
 		} catch(Exception e) {
 			e.printStackTrace();
