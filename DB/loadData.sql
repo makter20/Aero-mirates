@@ -904,11 +904,11 @@ COMMIT WORK;
 
 -- Load Booking Table
 
-INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('1','9','4', TO_DATE('07/12/2021', 'MM/DD/YYYY'),'53');
-INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('2','2','2', TO_DATE('07/12/2021', 'MM/DD/YYYY'),'88');
-INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('3','5','2', TO_DATE('07/16/2021', 'MM/DD/YYYY'), '97');
-INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('4','6','5', TO_DATE('07/06/2021', 'MM/DD/YYYY'),'125');
-INSERT INTO Booking (bookingId, userId, scheduleId, bookingDate, seatNumber) VALUES ('5','1','7', TO_DATE('08/23/2021', 'MM/DD/YYYY'),'132');
+INSERT INTO Booking (bookingId, emailId, scheduleId, bookingDate, seatNumber) VALUES ('1','HenryRAguayo@dayrep.com','4', TO_DATE('07/12/2021', 'MM/DD/YYYY'),'53');
+INSERT INTO Booking (bookingId, emailId, scheduleId, bookingDate, seatNumber) VALUES ('2','DouglasEBarker@jourrapide.com','2', TO_DATE('07/12/2021', 'MM/DD/YYYY'),'88');
+INSERT INTO Booking (bookingId, emailId, scheduleId, bookingDate, seatNumber) VALUES ('3','LamarJHarrigan@jourrapide.com','2', TO_DATE('07/16/2021', 'MM/DD/YYYY'), '97');
+INSERT INTO Booking (bookingId, emailId, scheduleId, bookingDate, seatNumber) VALUES ('4','BruceVWilson@jourrapide.com','5', TO_DATE('07/06/2021', 'MM/DD/YYYY'),'125');
+INSERT INTO Booking (bookingId, emailId, scheduleId, bookingDate, seatNumber) VALUES ('5','ElizaBMedina@dayrep.com','7', TO_DATE('08/23/2021', 'MM/DD/YYYY'),'132');
 COMMIT WORK;
 
 

@@ -1,8 +1,11 @@
 package Servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.sql.SQLException;
 import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,15 +36,15 @@ public class searchServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());	
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
@@ -52,8 +55,11 @@ public class searchServlet extends HttpServlet {
 		query = new queryModel(departing_from,going_to,departing_date,returning_date);
 		HttpSession session = request.getSession();
 		try {
-			//scheduledFlights = search.search(query);
-			session.setAttribute("scheduledFlights",scheduledFlights);
+			response.setContentType("text/html");
+			scheduledFlights = search.userSearch(query);
+			session.setAttribute("scheduledFlights", scheduledFlights);
+//			RequestDispatcher rd = request.getRequestDispatcher("/TravelAgency/allJSPclasses/searchResults.jsp");
+//		    rd.forward(request, response);
 		} catch(Exception e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());

@@ -7,7 +7,7 @@ CREATE TABLE Users(
     phoneNumber	varchar(100) UNIQUE NOT NULL,
     emailId	varchar(100) UNIQUE NOT NULL,
     userType	varchar(100) NOT NULL,
-    DOB		Date 
+    DOB		Date
 );
 
 
