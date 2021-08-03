@@ -38,10 +38,16 @@ CREATE TABLE Airport(
     FOREIGN KEY(city) REFERENCES City(cityId)
 );
 
+CREATE TABLE Airline(
+    airlineCode varchar(3) primary key,  -- 3 letter ICAO code
+	airlineName varchar(100) NOT NULL
+);
+
 CREATE TABLE Flight(
 	flightId varchar(100) primary key,
 	flightName varchar(100) NOT NULL,
-	airlineName varchar(100) NOT NULL
+    airlineCode varchar(3) NOT NULL,
+    FOREIGN KEY(airlineCode) REFERENCES Airline(airlineCode)
 );
 
 CREATE TABLE Schedules(

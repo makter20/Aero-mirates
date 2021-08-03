@@ -841,19 +841,31 @@ INSERT INTO Airport (airportId, airportName, city) VALUES ('TISX','Henry E. Rohl
 COMMIT WORK;
 
 
+-- Load Airline Table
+
+INSERT INTO Airline (airlineCode, airlineName) VALUES ('AAL','American Airlines');
+INSERT INTO Airline (airlineCode, airlineName) VALUES ('ASA','Alaska Airlines');
+INSERT INTO Airline (airlineCode, airlineName) VALUES ('DAL','Delta Air Lines');
+INSERT INTO Airline (airlineCode, airlineName) VALUES ('FFT','Frontier Airlines');
+INSERT INTO Airline (airlineCode, airlineName) VALUES ('JBU','JetBlue');
+INSERT INTO Airline (airlineCode, airlineName) VALUES ('UAL','United Airlines');
+INSERT INTO Airline (airlineCode, airlineName) VALUES ('SWA','Southwest Airlines');
+COMMIT WORK;
+
+
 -- Load Flight Table
 
-INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('UAL1039','United 1039','United Airlines');
-INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('SWA1021','Southwest 1021','Southwest Airlines');
-INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('JBU1374','JetBlue 1374','JetBlue');
-INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('ASA1137','Alaska Airlines 1137','Alaska Airlines');
-INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('AAL1003','American Airlines 1003','American Airlines');
-INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('DAL1032','Delta 1032','Delta Air Lines');
-INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('FFT1511','Frontier 1511','Frontier Airlines');
-INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('FFT1513','Frontier 1513','Frontier Airlines');
-INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('JBU1258','JetBlue 1258','JetBlue');
-INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('AAL1138','American Airlines 1138','American Airlines');
-INSERT INTO Flight (flightId, flightName, airlineName) VALUES ('DAL1085','Delta 1085','Delta Air Lines');
+INSERT INTO Flight (flightId, flightName, airlineCode) VALUES ('UAL1039','United 1039','UAL');
+INSERT INTO Flight (flightId, flightName, airlineCode) VALUES ('SWA1021','Southwest 1021','SWA');
+INSERT INTO Flight (flightId, flightName, airlineCode) VALUES ('JBU1374','JetBlue 1374','JBU');
+INSERT INTO Flight (flightId, flightName, airlineCode) VALUES ('ASA1137','Alaska Airlines 1137','ASA');
+INSERT INTO Flight (flightId, flightName, airlineCode) VALUES ('AAL1003','American Airlines 1003','AAL');
+INSERT INTO Flight (flightId, flightName, airlineCode) VALUES ('DAL1032','Delta 1032','DAL');
+INSERT INTO Flight (flightId, flightName, airlineCode) VALUES ('FFT1511','Frontier 1511','FFT');
+INSERT INTO Flight (flightId, flightName, airlineCode) VALUES ('FFT1513','Frontier 1513','FFT');
+INSERT INTO Flight (flightId, flightName, airlineCode) VALUES ('JBU1258','JetBlue 1258','JBU');
+INSERT INTO Flight (flightId, flightName, airlineCode) VALUES ('AAL1138','American Airlines 1138','AAL');
+INSERT INTO Flight (flightId, flightName, airlineCode) VALUES ('DAL1085','Delta 1085','DAL');
 COMMIT WORK;
 
 
