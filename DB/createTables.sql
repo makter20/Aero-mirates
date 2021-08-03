@@ -1,15 +1,14 @@
 
 CREATE TABLE Users(
-    userId 	int primary key,
+    userId 	int UNIQUE,
     fname	varchar(100) NOT NULL,
     lname	varchar(100) NOT NULL,
     password	varchar(100) NOT NULL,
     phoneNumber	varchar(100) UNIQUE NOT NULL,
-    emailId	varchar(100) UNIQUE NOT NULL,
+    emailId	varchar(100) PRIMARY KEY,
     userType	varchar(100) NOT NULL,
     DOB		Date
 );
-
 
 CREATE TABLE LoginCredentials(
 	userEmail varchar(100) primary key,
@@ -60,11 +59,11 @@ CREATE TABLE Schedules(
 
 CREATE TABLE Booking(
 	bookingId varchar(100) primary key,
-	userId int NOT NULL,
+	emailId varchar(100) NOT NULL,
 	scheduleId varchar(100) NOT NULL,
     bookingDate date NOT NULL,
     seatNumber varchar(10) NOT NULL,
-    FOREIGN KEY(userId) REFERENCES Users(userId),
+    FOREIGN KEY(emailId) REFERENCES Users(emailId),
     FOREIGN KEY(scheduleId) REFERENCES Schedules(scheduleId)
 );
 

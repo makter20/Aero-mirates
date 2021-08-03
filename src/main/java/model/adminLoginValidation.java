@@ -16,8 +16,8 @@ public class adminLoginValidation {
 	public boolean adminLoginValidate(adminModel admin) throws ClassNotFoundException {
 		try (Connection connection = WebConnection.getConnection()) {		
 			Statement st = connection.createStatement();
-			String query = "SELECT * FROM AdminLoginCredentials WHERE adminUserName= '" 
-							+ admin.getAdminUsername() + "'" + "AND adminPassword ='" 
+			String query = "SELECT * FROM AdminLoginCredentials WHERE adminUserName = '" 
+							+ admin.getAdminUsername() + "'" + "AND adminPassword = '" 
 							+ admin.getPassword() + "'";
 			rs = st.executeQuery(query);
 			if(rs.next()) {

@@ -5,6 +5,8 @@ import oracleConnection.WebConnection;
 import oracleConnection.printingSQLExc;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +39,9 @@ public class cancelBookingServlet extends HttpServlet {
 			if(rs == 1) {
 				System.out.println("Booking deleted!");
 				session.setAttribute("record", "Deleted");
-				response.sendRedirect("/TravelAgency/allJSPclasses/userScreen.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("/TravelAgency/allJSPclasses/userScreen.jsp");
+				rd.forward(request, response);
+				//response.sendRedirect("/TravelAgency/allJSPclasses/userScreen.jsp");
 			}
 			else {
 				response.sendRedirect("/TravelAgency/allJSPclasses/userScreen.jsp");
