@@ -1,6 +1,8 @@
 package Servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,34 +10,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.flightModel;
-import model.searchModel;
+import model.*;
 
 /**
- * Servlet implementation class createFlightServlet
+ * Servlet implementation class userTableServlet
  */
-@WebServlet("/chooseFlightServlet")
-public class chooseFlightServlet extends HttpServlet {
+@WebServlet("/userTableServlet")
+public class userTableServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private List<List<String>> users;
 	private searchModel search;
-	private flightModel flight;
-	private boolean valid;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public chooseFlightServlet() {
+    public userTableServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
     public void init() throws ServletException {
-		search = new searchModel();
-	}
-
+ 		search = new searchModel();	
+ 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doPost(request, response);
 	}
 
@@ -43,24 +43,16 @@ public class chooseFlightServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		flight = new flightModel(request.getParameter("flightName"),
-				request.getParameter("flightID"),
-				request.getParameter("airlineName"));
-		valid = search.findFlight(flight);
 		try {
-			if (valid) {
-				session.setAttribute("flight", flight);
-				session.setAttribute("added", false);
-				response.sendRedirect("/TravelAgency/allJSPclasses/addToSchedule.jsp");
-			}
-			else {
-				response.sendRedirect("/TravelAgency/allJSPclasses/createFlight.jsp");
-			}
-			
-		} catch (Exception e) {
-			
+			users = search.getAllUsers();
+			session.setAttribute("users",users);
+		} catch (Exception e){
+			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
+		response.sendRedirect("/TravelAgency/allJSPclasses/adminUserTable.jsp");
 	}
 
 }

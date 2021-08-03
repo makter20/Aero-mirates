@@ -19,7 +19,7 @@
 		  <li><a class="active" href="#home">Home</a></li>
 		  <li><a href="scheduleTable.jsp">Scheduled Flights</a></li>
 		  <li><a href="chooseFlight.jsp">Schedule a flight</a></li>
-		  <li><a href="#data">Customers</a></li>
+		  <li><a href="adminUserTable.jsp">Customers</a></li>
 		</ul>
 	</div>
 	<div class="right">

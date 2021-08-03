@@ -18,7 +18,7 @@
 		  <li><a href="adminScreen.jsp">Home</a></li>
 		  <li><a href="scheduleTable.jsp">Scheduled Flights</a></li>
 		  <li><a class="active" href="#flights">Schedule a Flight</a></li>
-		  <li><a href="#data">Customers</a></li>
+		  <li><a href="adminUserTable.jsp">Customers</a></li>
 		</ul>
 	</div>
 	<div class="right">

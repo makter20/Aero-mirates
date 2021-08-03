@@ -13,6 +13,7 @@ public class searchModel {
 	private boolean valid = false;
 	private List<List<String>> scheduledFlights;
 	private List<List<String>> flights;
+	private List<List<String>> users;
 	private ResultSet rs;
 	
 	
@@ -89,6 +90,37 @@ public class searchModel {
 		}
 		return flights;
 	}
+	
+	public List<List<String>> getAllUsers() {
+		users = new ArrayList<List<String>>();
+		try (Connection connection = WebConnection.getConnection()) {
+			Statement st = connection.createStatement();
+			String sqlQuery = "SELECT * FROM USERS";
+			rs = st.executeQuery(sqlQuery);
+			while(rs.next()) {
+				users.add(new ArrayList<String>());
+				users.get(users.size()-1)
+								.add(rs.getString("userId"));
+				users.get(users.size()-1)
+								.add(rs.getString("fname"));
+				users.get(users.size()-1)
+								.add(rs.getString("lname"));
+				users.get(users.size()-1)
+								.add(rs.getString("password"));
+				users.get(users.size()-1)
+								.add(rs.getString("phoneNumber"));
+				users.get(users.size()-1)
+								.add(rs.getString("emailId"));
+				users.get(users.size()-1)
+								.add(rs.getString("userType"));
+				users.get(users.size()-1)
+								.add(rs.getString("DOB"));
+			}			
+		} catch (SQLException e) {
+			printingSQLExc.SQLExceptionPrinter(e);
+		}
+		return users;
+	}	
 	
 	public boolean findFlight(flightModel flight) {
 		valid = false;
