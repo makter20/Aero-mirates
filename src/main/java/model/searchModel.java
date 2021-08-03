@@ -41,8 +41,7 @@ public class searchModel {
 			printingSQLExc.SQLExceptionPrinter(e);
 		}
 		return valid;
-	}	
-	
+	}
 	public List<List<String>> getAll() {
 		scheduledFlights = new ArrayList<List<String>>();
 		try (Connection connection = WebConnection.getConnection()) {
@@ -124,13 +123,29 @@ public class searchModel {
 	
 	public boolean findFlight(flightModel flight) {
 		valid = false;
-		String sql = "SELECT * FROM FLIGHT WHERE flightId = ? AND flightName = "
-				+ "? AND airlineName = ?";
+		String sql = "SELECT * FROM FLIGHT WHERE flightId = ? AND flightName = ? "
+					+ "AND airlineName = ?";
 		try (Connection connection = WebConnection.getConnection()) {
 			PreparedStatement st = connection.prepareStatement(sql);
 			st.setString(1, flight.getFlightID());
 			st.setString(2, flight.getFlightName());
 			st.setString(3, flight.getAirlineName());
+			System.out.println(st.toString());
+			rs = st.executeQuery();
+			if (rs.next()) {
+				valid = true;
+			}			
+		} catch (SQLException e) {
+			printingSQLExc.SQLExceptionPrinter(e);
+		}
+		return valid;
+	}
+	public boolean findFlightID(flightModel flight) {
+		valid = false;
+		String sql = "SELECT * FROM FLIGHT WHERE flightId = ?";
+		try (Connection connection = WebConnection.getConnection()) {
+			PreparedStatement st = connection.prepareStatement(sql);
+			st.setString(1, flight.getFlightID());
 			System.out.println(st.toString());
 			rs = st.executeQuery();
 			if (rs.next()) {
