@@ -17,6 +17,7 @@
 		<ul>
 		  <li><a href="adminScreen.jsp">Home</a></li>
 		  <li><a class="active" href="#flights">Scheduled Flights</a></li>
+		  <li><a href="createFlight.jsp">Create a flight</a></li>
 		  <li><a href="chooseFlight.jsp">Schedule a flight</a></li>
 		  <li><a href="adminUserTable.jsp">Customers</a></li>
 		</ul>

@@ -17,9 +17,10 @@
 		<ul>
 		  <li><a href="adminScreen.jsp">Home</a></li>
 		  <li><a href="scheduleTable.jsp">Scheduled Flights</a></li>
-		  <li><a href="createFlight.jsp">Create a flight</a></li>
-		  <li><a class="active" href="#flights">Schedule a flight</a></li>
+		  <li><a class="active" href="#flights">Create a flight</a></li>
+		  <li><a href="chooseFlight.jsp">Schedule a flight</a></li>
 		  <li><a href="adminUserTable.jsp">Customers</a></li>
+		  
 		</ul>
 	</div>
 	<div class="right">
@@ -29,36 +30,14 @@
 				<h1>ERROR</h1>
 			<%}%>
 		<%}%>
-		<h1>Flight Scheduler:</h1>
-		<h4>Choose a flight from the table of flights:</h4>
-		<form action="<%=request.getContextPath()%>/refreshChooseFlightServlet" method="post" class="search_form">
-			<input type="submit" value="Refresh">
-		</form>
-		<form action="<%=request.getContextPath()%>/chooseFlightServlet" method="post" class="search_form">
+		<h1>Flight Creation:</h1>
+		<h4>Create a flight:</h4>
+		<form action="<%=request.getContextPath()%>/createFlightServlet" method="post" class="search_form">
 			<input type="text" name="flightID" autofocus placeholder="Flight ID" required>
 			<input type="text" name="flightName" autofocus placeholder="Flight Name" required>
 			<input type="text" name="airlineName" autofocus placeholder="Airline Name" required>
-			<br><input type="submit" value="Choose Flight"><br>
+			<br><input type="submit" value="Create Flight"><br>
 		</form>
-		<div>
-			<table border="1">
-				<tr>
-					<td>Flight ID</td>
-					<td>Flight Name</td>
-					<td>Airline Name</td>
-				</tr>
-				<%List<List<String>>flights=(List<List<String>>)session.getAttribute("chooseFlights"); %>
-				<%if(flights != null){ %>
-					<%for(List<String>f:flights) { %>
-						<tr class="flightRow">
-							<td><% out.println(f.get(0)); %></td>
-					        <td><% out.println(f.get(1)); %></td>
-					        <td><% out.println(f.get(2)); %></td>
-						</tr>
-					<%}%> 
-				<%}%>
-			 </table>
-		</div>
 	</div>
 </body>
 </html>
