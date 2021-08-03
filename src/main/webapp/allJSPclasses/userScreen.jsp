@@ -9,7 +9,7 @@
 </head>
 <link rel="stylesheet" href="user_admin.css">
 <body>
-<div class="top_container"> 
+<div class="top_container">
 <h1 id="top_title">Travel Agency</h1>
 </div>
 

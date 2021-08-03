@@ -22,7 +22,7 @@ public class loginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private usersModel user;
 	private loginValidation val;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,16 +32,16 @@ public class loginServlet extends HttpServlet {
     }
     public void init() throws ServletException {
 		val = new loginValidation();
-		
+
 	}
-    
-    
+
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		HttpSession session = request.getSession();
 		String email = request.getParameter("email");
 		String pass = request.getParameter("pwd");
@@ -60,7 +60,7 @@ public class loginServlet extends HttpServlet {
 				}
 			}else {
 				System.out.println("Wrong username and password");
-				response.setContentType("text/html");  
+				response.setContentType("text/html");
 				session.setAttribute("errorMessage", "Invalid email and password");
 				request.setAttribute("errorMessage", "Invalid email and password");
 				response.sendRedirect("/TravelAgency/allJSPclasses/login.jsp");
@@ -69,8 +69,8 @@ public class loginServlet extends HttpServlet {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		
-		
+
+
 	}
 
 }

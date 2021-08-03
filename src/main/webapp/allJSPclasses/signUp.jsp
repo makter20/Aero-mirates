@@ -17,17 +17,17 @@
 
 <form action="<%=request.getContextPath()%>/signUpServlet" method="post">
 
-<label for= "first_name"> First name: 
+<label for= "first_name"> First name:
 <input type ="text" id= "first_name" name="firstName">
 </label>
-<label for= "last_name"> Last name: 
+<label for= "last_name"> Last name:
 <input type ="text" id= "last_name" name="lastName">
 </label><br><br>
 
-<label for= "phone"> Phone-Number: 
+<label for= "phone"> Phone-Number:
 <input type ="text" id= "phone" name="phone_number">
 </label><br><br>
-<label for= "email"> Email: 
+<label for= "email"> Email:
 <input type ="text" id="email" name= "email">
 
 <%-- <% String email = (String)session.getAttribute("email");
@@ -47,7 +47,7 @@ email = (String ) session.getAttribute("email");%>
 <%}%> --%>
 </label><br><br>
 
-<label for= "password"> Password: 
+<label for= "password"> Password:
 <input type="password" id= "password" name="password">
 </label><br><br>
 
