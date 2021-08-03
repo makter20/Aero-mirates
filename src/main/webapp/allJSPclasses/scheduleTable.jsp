@@ -16,13 +16,20 @@
 	<div>
 		<ul>
 		  <li><a href="adminScreen.jsp">Home</a></li>
-		  <li><a class="active" href="#flights">Flights</a></li>
+		  <li><a class="active" href="#flights">Scheduled Flights</a></li>
+		  <li><a href="chooseFlight.jsp">Schedule a flight</a></li>
 		  <li><a href="#data">Customers</a></li>
 		</ul>
 	</div>
 	<div class="right">
+		<%if(session.getAttribute("error")!=null){ %>
+			<%boolean error = (boolean)session.getAttribute("error"); %>
+			<%if(error == true ){ %>
+				<h1>ERROR</h1>
+			<%}%>
+		<%}%>
 		<h1>Flight Status:</h1>
-		<form action="<%=request.getContextPath()%>/adminFlightServlet" method="post" class="search_form">
+		<form action="<%=request.getContextPath()%>/scheduleServlet" method="post" class="search_form">
 			<input type="submit" value="Refresh">
 		</form>
 		<div>
