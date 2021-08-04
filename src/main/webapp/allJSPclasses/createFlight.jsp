@@ -35,7 +35,7 @@
 		<form action="<%=request.getContextPath()%>/createFlightServlet" method="post" class="search_form">
 			<input type="text" name="flightID" autofocus placeholder="Flight ID" required>
 			<input type="text" name="flightName" autofocus placeholder="Flight Name" required>
-			<input type="text" name="airlineName" autofocus placeholder="Airline Name" required>
+			<input type="text" name="airlineCode" autofocus placeholder="Airline Code" required>
 			<br><input type="submit" value="Create Flight"><br>
 		</form>
 	</div>

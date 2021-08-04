@@ -85,11 +85,12 @@ import java.sql.*;
 					flights.get(flights.size()-1)
 									.add(rs.getString("flightName"));
 					flights.get(flights.size()-1)
-									.add(rs.getString("airlineName"));
+									.add(rs.getString("airlineCode"));
 				}
 			} catch (SQLException e) {
 				printingSQLExc.SQLExceptionPrinter(e);
 			}
+			System.out.println("flights created");
 			return flights;
 		}
 
@@ -127,12 +128,12 @@ import java.sql.*;
 		public boolean findFlight(flightModel flight) {
 			valid = false;
 			String sql = "SELECT * FROM FLIGHT WHERE flightId = ? AND flightName = ? "
-						+ "AND airlineName = ?";
+						+ "AND airlineCode = ?";
 			try (Connection connection = WebConnection.getConnection()) {
 				PreparedStatement st = connection.prepareStatement(sql);
 				st.setString(1, flight.getFlightID());
 				st.setString(2, flight.getFlightName());
-				st.setString(3, flight.getAirlineName());
+				st.setString(3, flight.getAirlineCode());
 				System.out.println(st.toString());
 				rs = st.executeQuery();
 				if (rs.next()) {
