@@ -4,6 +4,7 @@ DROP TABLE AdminLoginCredentials;
 DROP TABLE Booking;
 DROP TABLE Schedules;
 DROP TABLE Flight;
+DROP TABLE Airline;
 DROP TABLE Users;
 DROP SEQUENCE user_id;
 DROP TABLE Airport;
