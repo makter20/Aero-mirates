@@ -46,8 +46,8 @@ public class createFlightServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String flightID = request.getParameter("flightID");
 		String flightName = request.getParameter("flightName");
-		String airlineName = request.getParameter("airlineName");
-		flight = new flightModel(flightID, flightName, airlineName);
+		String airlineCode = request.getParameter("airlineCode");
+		flight = new flightModel(flightID, flightName, airlineCode);
 		try {
 			check = search.findFlightID(flight);
 			if(check) {

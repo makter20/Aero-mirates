@@ -44,17 +44,20 @@ public class chooseFlightServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		flight = new flightModel(request.getParameter("flightName"),
-				request.getParameter("flightID"),
-				request.getParameter("airlineName"));
+		flight = new flightModel(request.getParameter("flightID"),
+				request.getParameter("flightName"),
+				request.getParameter("airlineCode"));
 		valid = search.findFlight(flight);
+		System.out.println("findFlight worked");
 		try {
 			if (valid) {
+				System.out.println("findFlight chillin");
 				session.setAttribute("flight", flight);
 				session.setAttribute("added", false);
 				response.sendRedirect("/TravelAgency/allJSPclasses/addToSchedule.jsp");
 			}
 			else {
+				System.out.println("findFlight NOT chillin");
 				response.sendRedirect("/TravelAgency/allJSPclasses/chooseFlight.jsp");
 			}
 			

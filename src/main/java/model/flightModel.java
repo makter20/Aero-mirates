@@ -10,14 +10,14 @@ public class flightModel {
 	private LocalDateTime flightDate;
 	private String flightName;
 	private String flightID;
-	private String airlineName;
+	private String airlineCode;
 	
 	
-	public flightModel(String flightName, String flightID, String airlineName) {
+	public flightModel(String flightID, String flightName, String airlineCode) {
 		super();
-		this.flightName = flightName;
 		this.flightID = flightID;
-		this.airlineName = airlineName;
+		this.flightName = flightName;
+		this.airlineCode = airlineCode;
 	}
 	public String getFlightID() {
 		return flightID;
@@ -25,11 +25,11 @@ public class flightModel {
 	public void setFlightID(String flightID) {
 		this.flightID = flightID;
 	}
-	public String getAirlineName() {
-		return airlineName;
+	public String getAirlineCode() {
+		return airlineCode;
 	}
-	public void setAirlineName(String airlineName) {
-		this.airlineName = airlineName;
+	public void setAirlineName(String airlineCode) {
+		this.airlineCode = airlineCode;
 	}
 	public String getFlightName() {
 		return flightName;

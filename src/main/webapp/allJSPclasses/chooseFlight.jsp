@@ -37,7 +37,7 @@
 		<form action="<%=request.getContextPath()%>/chooseFlightServlet" method="post" class="search_form">
 			<input type="text" name="flightID" autofocus placeholder="Flight ID" required>
 			<input type="text" name="flightName" autofocus placeholder="Flight Name" required>
-			<input type="text" name="airlineName" autofocus placeholder="Airline Name" required>
+			<input type="text" name="airlineCode" autofocus placeholder="Airline Code" required>
 			<br><input type="submit" value="Choose Flight"><br>
 		</form>
 		<div>
@@ -45,7 +45,7 @@
 				<tr>
 					<td>Flight ID</td>
 					<td>Flight Name</td>
-					<td>Airline Name</td>
+					<td>Airline Code</td>
 				</tr>
 				<%List<List<String>>flights=(List<List<String>>)session.getAttribute("chooseFlights"); %>
 				<%if(flights != null){ %>
