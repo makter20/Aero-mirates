@@ -30,7 +30,7 @@ f4bb25ffb011   epiclabs/docker-oracle-xe-11g   "/usr/sbin/startup.sh"   7 second
     - Hit `F1` and type in `Oracle: New Connection`
     - username=`system`
     - password=`cs157a` as specified in `docker run`, or default password `oracle`
-        - If you ave the password now you won't need to type it for every sql file later
+        - If you have the password now you won't need to type it for every sql file later
 - For each sql file you edit, you need to "connect" to the database
     - Easiest way to do this is to open your sql file, hit `F1` and type in `Oracle: Connect`
 
