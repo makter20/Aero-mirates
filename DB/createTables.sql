@@ -16,19 +16,16 @@ CREATE TABLE LoginCredentials(
 );
 
 
-
 CREATE TABLE AdminLoginCredentials(
     adminUserName varchar(100) primary key,
     adminPassword varchar(100) NOT NULL
 );
 
 
-
 CREATE TABLE City(
 	cityId varchar(100) primary key,
 	cityName varchar(100) NOT NULL
 );
-
 
 CREATE TABLE Airport(
 	airportId varchar(100) primary key,
@@ -54,8 +51,7 @@ CREATE TABLE Schedules(
 	sourceId varchar(100) NOT NULL,
 	destinationId varchar(100) NOT NULL,
     capacity int NOT NULL,
-    scheduledDate date NOT NULL,
-    scheduledtime TIMESTAMP NOT NULL,
+    scheduledDeparture date NOT NULL,
     returnDate date NOT NULL,
     flightId varchar(100) NOT NULL,
     FOREIGN KEY(sourceId) REFERENCES Airport(airportId),
